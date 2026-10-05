@@ -10,36 +10,40 @@ const bad = (what: string) => new ProviderError("malformed", `Unexpected ${what}
  * Those arrive only from the single-card endpoint, see normaliseTcgdexCard.
  * Image URLs have no extension: append `/{high|low}.{webp|png|jpg}` (documented at tcgdex.dev/assets).
  */
-export function normaliseTcgdexBrief(raw: unknown): CardDefinition {
+export function normaliseTcgdexBrief(raw: unknown, language = "en"): CardDefinition {
   if (!raw || typeof raw !== "object") throw bad("card");
   const r = raw as Record<string, any>;
   if (typeof r.id !== "string" || typeof r.name !== "string") throw bad("card");
   const dash = r.id.lastIndexOf("-");
   return {
-    id: `pokemon:${r.id}`, providerId: r.id, game: "pokemon", name: r.name,
+    id: language === "en" ? `pokemon:${r.id}` : `pokemon:${language}:${r.id}`,
+    providerId: r.id, game: "pokemon", name: r.name, language,
     setId: dash > 0 ? r.id.slice(0, dash) : undefined,
     cardNumber: r.localId != null ? String(r.localId) : undefined,
     imageUrl: typeof r.image === "string" ? `${r.image}/high.webp` : undefined,
     thumbUrl: typeof r.image === "string" ? `${r.image}/low.webp` : undefined,
   };
 }
-export function normaliseTcgdexCard(raw: unknown): CardDefinition {
-  const base = normaliseTcgdexBrief(raw);
+export function normaliseTcgdexCard(raw: unknown, language = "en"): CardDefinition {
+  const base = normaliseTcgdexBrief(raw, language);
   const r = raw as Record<string, any>;
   return {
     ...base,
     setId: r.set?.id ?? base.setId, setName: r.set?.name,
     rarity: typeof r.rarity === "string" ? r.rarity : undefined,
+    printings: r.variants && typeof r.variants === "object" ? Object.entries(r.variants)
+      .filter(([, available]) => available === true).map(([key]) => key) : undefined,
     extra: {
       category: r.category, illustrator: r.illustrator, hp: r.hp,
       types: Array.isArray(r.types) ? r.types.join(", ") : undefined,
     },
   };
 }
-export function normaliseTcgdexSet(raw: unknown): CardSet {
+export function normaliseTcgdexSet(raw: unknown, language = "en"): CardSet {
   const r = raw as Record<string, any>;
   if (!r || typeof r.id !== "string" || typeof r.name !== "string") throw bad("set");
-  return { id: r.id, name: r.name, game: "pokemon", cardCount: r.cardCount?.total,
+  return { id: r.id, name: r.name, game: "pokemon", language,
+    cardCount: r.cardCount?.total, totalCardCount: r.cardCount?.total, officialCardCount: r.cardCount?.official,
     logoUrl: typeof r.logo === "string" ? `${r.logo}.webp` : undefined };
 }
 

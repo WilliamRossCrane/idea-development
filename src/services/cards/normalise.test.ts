@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normaliseTcgdexBrief, normaliseTcgdexCard, ProviderError } from "./normalise";
+import { normaliseTcgdexBrief, normaliseTcgdexCard, normaliseTcgdexSet, ProviderError } from "./normalise";
 import { mockOnePiece } from "./providers/mock";
 
 // Shapes copied from tcgdex.dev/rest/cards and tcgdex.dev/reference/card
@@ -16,6 +16,14 @@ describe("TCGdex normalisation", () => {
   });
   it("maps a full card with set and rarity", () => {
     expect(normaliseTcgdexCard(full)).toMatchObject({ setName: "Darkness Ablaze", rarity: "Uncommon", extra: { hp: 110, types: "Colorless" } });
+  });
+  it("keeps Japanese printings distinct and preserves known variants", () => {
+    const card = normaliseTcgdexCard({ ...full, id: "PMCG1-001", name: "フシギダネ", variants: { normal: true, reverse: false, holo: true } }, "ja");
+    expect(card).toMatchObject({ id: "pokemon:ja:PMCG1-001", providerId: "PMCG1-001", language: "ja", printings: ["normal", "holo"] });
+  });
+  it("normalizes official and total set checklist counts", () => {
+    expect(normaliseTcgdexSet({ id: "PMCG1", name: "拡張パック", cardCount: { official: 102, total: 102 }, logo: "https://assets.tcgdex.net/ja/base/PMCG1/logo" }, "ja"))
+      .toMatchObject({ id: "PMCG1", language: "ja", cardCount: 102, officialCardCount: 102, totalCardCount: 102 });
   });
   it("handles a missing image", () => {
     expect(normaliseTcgdexBrief({ id: "x-1", name: "N" }).imageUrl).toBeUndefined();
