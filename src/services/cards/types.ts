@@ -66,6 +66,27 @@ export interface CardSet {
   totalCardCount?: number;
   logoUrl?: string;
 }
+export interface CardPriceQuote {
+  source: string;
+  currency: string;
+  printing: string;
+  amount: number;
+  lowPrice?: number;
+  updatedAt?: string;
+}
+export interface AudPriceQuote extends CardPriceQuote {
+  audEstimate?: number;
+  exchangeRate?: number;
+  exchangeRateDate?: string;
+}
+export interface CardDetails {
+  card: CardDefinition;
+  prices: CardPriceQuote[];
+}
+export interface CardDetailsResponse {
+  card: CardDefinition;
+  prices: AudPriceQuote[];
+}
 export interface CardSearchQuery {
   q?: string;
   setId?: string;
@@ -94,6 +115,6 @@ export interface CardProvider {
     providerId: string,
     signal?: AbortSignal,
     language?: string,
-  ): Promise<CardDefinition | null>;
+  ): Promise<CardDetails | null>;
   getSets(language?: string, signal?: AbortSignal): Promise<CardSet[]>;
 }

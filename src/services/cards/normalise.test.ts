@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   normaliseTcgdexBrief,
   normaliseTcgdexCard,
+  normaliseTcgdexPrices,
   normaliseTcgdexSet,
   ProviderError,
 } from "./normalise";
@@ -85,6 +86,59 @@ describe("TCGdex normalisation", () => {
       officialCardCount: 102,
       totalCardCount: 102,
     });
+  });
+  it("keeps market source, currency, printing and update time on quotes", () => {
+    expect(
+      normaliseTcgdexPrices({
+        cardmarket: {
+          unit: "EUR",
+          updated: "2026-10-04T10:00:00Z",
+          avg: 0.08,
+          low: 0.02,
+          "avg-holo": 0.25,
+          "low-holo": 0.04,
+        },
+        tcgplayer: {
+          unit: "USD",
+          updated: "2026-10-04T11:00:00Z",
+          normal: { marketPrice: 0.25, lowPrice: 0.01 },
+          "reverse-holofoil": { marketPrice: 0.44 },
+        },
+      }),
+    ).toEqual([
+      {
+        source: "Cardmarket",
+        currency: "EUR",
+        printing: "normal",
+        amount: 0.08,
+        lowPrice: 0.02,
+        updatedAt: "2026-10-04T10:00:00Z",
+      },
+      {
+        source: "Cardmarket",
+        currency: "EUR",
+        printing: "holo",
+        amount: 0.25,
+        lowPrice: 0.04,
+        updatedAt: "2026-10-04T10:00:00Z",
+      },
+      {
+        source: "TCGplayer",
+        currency: "USD",
+        printing: "normal",
+        amount: 0.25,
+        lowPrice: 0.01,
+        updatedAt: "2026-10-04T11:00:00Z",
+      },
+      {
+        source: "TCGplayer",
+        currency: "USD",
+        printing: "reverse",
+        amount: 0.44,
+        lowPrice: undefined,
+        updatedAt: "2026-10-04T11:00:00Z",
+      },
+    ]);
   });
   it("handles a missing image", () => {
     expect(

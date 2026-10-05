@@ -4,10 +4,22 @@ import {
   POKEMON_LANGUAGES,
   PRINTING_LABELS,
   type CardDefinition,
+  type CardDetailsResponse,
 } from "@/services/cards/types";
 import { useStore } from "@/features/store";
 import { copiesOf } from "@/features/binders/logic";
 import { CardArt, GAME_LABEL } from "./CardArt";
+
+function formatCurrency(amount: number, currency: string) {
+  try {
+    return new Intl.NumberFormat("en-AU", {
+      style: "currency",
+      currency,
+    }).format(amount);
+  } catch {
+    return `${currency} ${amount.toFixed(2)}`;
+  }
+}
 
 export function CardModal({
   card,
@@ -19,6 +31,10 @@ export function CardModal({
   const { binders, items, addCopy, addToBinder } = useStore();
   const [detail, setDetail] = useState(card);
   const [printing, setPrinting] = useState(card.printings?.[0] ?? "");
+  const [prices, setPrices] = useState<CardDetailsResponse["prices"]>([]);
+  const [pricingStatus, setPricingStatus] = useState<
+    "loading" | "ready" | "unavailable"
+  >("loading");
   const [binderId, setBinderId] = useState(binders[0]?.id ?? "");
   const [msg, setMsg] = useState("");
 
@@ -26,21 +42,25 @@ export function CardModal({
     // list results from some providers lack set/rarity: fetch the full card
     setDetail(card);
     setPrinting(card.printings?.[0] ?? "");
-    if (card.setName) return;
+    setPrices([]);
+    setPricingStatus("loading");
     const ac = new AbortController();
     const language = card.language ?? "en";
     fetch(
       `/api/cards/${card.game}/${encodeURIComponent(card.providerId)}?${new URLSearchParams({ language })}`,
       { signal: ac.signal },
     )
-      .then((r) => (r.ok ? r.json() : null))
-      .then((d) => {
-        if (d) {
-          setDetail(d);
-          setPrinting(d.printings?.[0] ?? "");
-        }
+      .then(async (r) => {
+        if (!r.ok) throw new Error("Price lookup unavailable");
+        const d = (await r.json()) as CardDetailsResponse;
+        setDetail(d.card);
+        setPrices(d.prices ?? []);
+        setPrinting(d.card.printings?.[0] ?? "");
+        setPricingStatus("ready");
       })
-      .catch(() => {});
+      .catch((e) => {
+        if (e.name !== "AbortError") setPricingStatus("unavailable");
+      });
     return () => ac.abort();
   }, [card]);
   useEffect(() => {
@@ -120,6 +140,58 @@ export function CardModal({
                 ))}
               </select>
             </label>
+          )}
+          {pricingStatus !== "loading" && (
+            <section className="space-y-2" aria-label="Market estimates">
+              <h3 className="text-sm font-semibold">Market estimates</h3>
+              {pricingStatus === "unavailable" ? (
+                <p className="text-xs text-mute">
+                  Price data is unavailable from the configured provider.
+                </p>
+              ) : prices.length === 0 ? (
+                <p className="text-xs text-mute">
+                  No current market price is available for this card.
+                </p>
+              ) : (
+                <div className="space-y-2">
+                  {prices.map((quote) => (
+                    <div
+                      key={`${quote.source}:${quote.currency}:${quote.printing}`}
+                      className="text-xs"
+                    >
+                      <div className="flex flex-wrap justify-between gap-2">
+                        <span>
+                          {PRINTING_LABELS[quote.printing] ?? quote.printing} ·{" "}
+                          {quote.source}
+                        </span>
+                        <strong>
+                          {quote.audEstimate !== undefined
+                            ? `${formatCurrency(quote.audEstimate, "AUD")} estimate`
+                            : formatCurrency(quote.amount, quote.currency)}
+                        </strong>
+                      </div>
+                      <p className="text-mute">
+                        {formatCurrency(quote.amount, quote.currency)} · Updated{" "}
+                        {quote.updatedAt
+                          ? new Date(quote.updatedAt).toLocaleDateString(
+                              "en-AU",
+                            )
+                          : "date not supplied"}
+                      </p>
+                      {quote.currency !== "AUD" &&
+                        quote.audEstimate !== undefined && (
+                          <p className="text-mute">
+                            Converted at 1 {quote.currency} ={" "}
+                            {quote.exchangeRate?.toFixed(4)} AUD (rate date{" "}
+                            {quote.exchangeRateDate}); not an Australian-market
+                            quote.
+                          </p>
+                        )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
           )}
           {owned > 0 && <p className="text-sm text-mute">Owned ×{owned}</p>}
           <div className="space-y-2">

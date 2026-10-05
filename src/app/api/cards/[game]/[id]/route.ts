@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getProvider } from "@/services/cards/providers";
 import { ProviderError } from "@/services/cards/normalise";
+import { addAudEstimates } from "@/services/cards/pricing";
 import { POKEMON_LANGUAGES } from "@/services/cards/types";
 
 export async function GET(
@@ -17,15 +18,18 @@ export async function GET(
       { status: 400 },
     );
   try {
-    const card = await getProvider(game).getCard(
+    const details = await getProvider(game).getCard(
       decodeURIComponent(id),
       req.signal,
       language,
     );
-    return card
-      ? NextResponse.json(card, {
-          headers: { "Cache-Control": "public, s-maxage=86400" },
-        })
+    return details
+      ? NextResponse.json(
+          { card: details.card, prices: await addAudEstimates(details.prices) },
+          {
+            headers: { "Cache-Control": "public, s-maxage=86400" },
+          },
+        )
       : NextResponse.json({ error: "Card not found." }, { status: 404 });
   } catch (e) {
     if ((e as Error).name === "AbortError")

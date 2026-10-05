@@ -8,6 +8,7 @@ import {
   ProviderError,
   normaliseTcgdexBrief,
   normaliseTcgdexCard,
+  normaliseTcgdexPrices,
   normaliseTcgdexSet,
 } from "../normalise";
 
@@ -96,10 +97,15 @@ export const tcgdexProvider: CardProvider = {
   async getCard(id, signal, requestedLanguage) {
     const language = languageOrEnglish(requestedLanguage);
     try {
-      return normaliseTcgdexCard(
-        await get(`/cards/${encodeURIComponent(id)}`, language, signal),
+      const raw = await get(
+        `/cards/${encodeURIComponent(id)}`,
         language,
+        signal,
       );
+      return {
+        card: normaliseTcgdexCard(raw, language),
+        prices: normaliseTcgdexPrices((raw as any)?.pricing),
+      };
     } catch (e) {
       if (e instanceof ProviderError && e.code === "not-found") return null;
       throw e;

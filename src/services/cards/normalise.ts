@@ -1,4 +1,4 @@
-import type { CardDefinition, CardSet } from "./types";
+import type { CardDefinition, CardPriceQuote, CardSet } from "./types";
 
 export class ProviderError extends Error {
   constructor(
@@ -75,6 +75,56 @@ export function normaliseTcgdexSet(raw: unknown, language = "en"): CardSet {
     officialCardCount: r.cardCount?.official,
     logoUrl: typeof r.logo === "string" ? `${r.logo}.webp` : undefined,
   };
+}
+
+export function normaliseTcgdexPrices(raw: unknown): CardPriceQuote[] {
+  if (!raw || typeof raw !== "object") return [];
+  const prices = raw as Record<string, any>,
+    quotes: CardPriceQuote[] = [];
+  const cardmarket = prices.cardmarket;
+  if (cardmarket && typeof cardmarket === "object") {
+    for (const [key, printing] of [
+      ["avg", "normal"],
+      ["avg-holo", "holo"],
+    ]) {
+      const amount = cardmarket[key];
+      if (typeof amount === "number" && Number.isFinite(amount) && amount > 0) {
+        quotes.push({
+          source: "Cardmarket",
+          currency: cardmarket.unit ?? "EUR",
+          printing,
+          amount,
+          lowPrice:
+            typeof cardmarket[key === "avg" ? "low" : "low-holo"] === "number"
+              ? cardmarket[key === "avg" ? "low" : "low-holo"]
+              : undefined,
+          updatedAt: cardmarket.updated,
+        });
+      }
+    }
+  }
+  const tcgplayer = prices.tcgplayer;
+  if (tcgplayer && typeof tcgplayer === "object") {
+    for (const [key, value] of Object.entries(tcgplayer)) {
+      if (
+        !value ||
+        typeof value !== "object" ||
+        typeof (value as any).marketPrice !== "number"
+      )
+        continue;
+      const quote = value as Record<string, any>;
+      quotes.push({
+        source: "TCGplayer",
+        currency: tcgplayer.unit ?? "USD",
+        printing: key === "reverse-holofoil" ? "reverse" : key,
+        amount: quote.marketPrice,
+        lowPrice:
+          typeof quote.lowPrice === "number" ? quote.lowPrice : undefined,
+        updatedAt: tcgplayer.updated,
+      });
+    }
+  }
+  return quotes;
 }
 
 /* ---------- tcgapi.dev (One Piece) ----------
