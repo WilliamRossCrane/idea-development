@@ -212,7 +212,8 @@ export function Library({
             (item) =>
               (item.status === "Owned" || item.status === "For Trade") &&
               item.card.game === selectedSet.game &&
-              (!selectedSet.language || (item.card.language ?? "en") === selectedSet.language) &&
+              (!selectedSet.language ||
+                (item.card.language ?? "en") === selectedSet.language) &&
               item.card.setId === selectedSet.id,
           )
           .map((item) => item.card.id),
@@ -241,39 +242,42 @@ export function Library({
           ))}
         </select>
         {game === "pokemon" && (
-            <select
-              aria-label="Language"
-              value={language}
-              onChange={(e) => {
-                setLanguage(e.target.value);
-                setSetId("");
-              }}
-              className="rounded-lg border border-line bg-panel px-2 py-2 text-sm"
-            >
-              {POKEMON_LANGUAGES.map((l) => (
-                <option key={l.code} value={l.code}>
-                  {l.name}
-                </option>
-              ))}
-            </select>
+          <select
+            aria-label="Language"
+            value={language}
+            onChange={(e) => {
+              setLanguage(e.target.value);
+              setSetId("");
+            }}
+            className="rounded-lg border border-line bg-panel px-2 py-2 text-sm"
+          >
+            {POKEMON_LANGUAGES.map((l) => (
+              <option key={l.code} value={l.code}>
+                {l.name}
+              </option>
+            ))}
+          </select>
         )}
         {(game === "pokemon" || game === "one-piece") && (
-            <select
-              aria-label="Card set"
-              value={setId}
-              disabled={setsLoading || !!setsError}
-              onChange={(e) => setSetId(e.target.value)}
-              className="max-w-56 rounded-lg border border-line bg-panel px-2 py-2 text-sm"
-            >
-              <option value="">
-                {setsLoading ? "Loading sets…" : "All sets"}
+          <select
+            aria-label="Card set"
+            value={setId}
+            disabled={setsLoading || !!setsError}
+            onChange={(e) => setSetId(e.target.value)}
+            className="max-w-56 rounded-lg border border-line bg-panel px-2 py-2 text-sm"
+          >
+            <option value="">
+              {setsLoading ? "Loading sets…" : "All sets"}
+            </option>
+            {sets.map((s) => (
+              <option
+                key={`${s.game}:${s.language ?? ""}:${s.id}`}
+                value={s.id}
+              >
+                {s.name} · {s.cardCount ?? "?"}
               </option>
-              {sets.map((s) => (
-                <option key={`${s.game}:${s.language ?? ""}:${s.id}`} value={s.id}>
-                  {s.name} · {s.cardCount ?? "?"}
-                </option>
-              ))}
-            </select>
+            ))}
+          </select>
         )}
         <input
           ref={searchRef}

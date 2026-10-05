@@ -163,12 +163,63 @@ export function normaliseTcgapiCard(
   };
 }
 
+export function normaliseTcgapiPrices(raw: unknown): CardPriceQuote[] {
+  if (!raw || typeof raw !== "object") return [];
+  const card = raw as Record<string, any>;
+  const rows = Array.isArray(card.prices) ? card.prices : [card];
+  return rows.flatMap((row: any) => {
+    const amount =
+      typeof row?.market_price === "number"
+        ? row.market_price
+        : row?.marketPrice;
+    if (typeof amount !== "number" || !Number.isFinite(amount) || amount <= 0)
+      return [];
+    const rawPrinting =
+      typeof row.printing === "string" ? row.printing.toLowerCase() : "normal";
+    const printing =
+      (
+        {
+          normal: "normal",
+          "reverse holofoil": "reverse",
+          "reverse-holofoil": "reverse",
+          holofoil: "holo",
+        } as Record<string, string>
+      )[rawPrinting] ?? rawPrinting;
+    return [
+      {
+        source: "TCG API",
+        currency: row.currency ?? card.currency ?? "USD",
+        printing,
+        amount,
+        lowPrice:
+          typeof row.low_price === "number"
+            ? row.low_price
+            : typeof row.lowPrice === "number"
+              ? row.lowPrice
+              : undefined,
+        updatedAt:
+          row.market_price_as_of ?? row.price_updated_at ?? row.updated_at,
+      },
+    ];
+  });
+}
+
 export function normaliseTcgapiSet(raw: unknown): CardSet {
   const r = raw as Record<string, any>;
-  if (!r || (typeof r.id !== "string" && typeof r.id !== "number") || typeof r.name !== "string")
+  if (
+    !r ||
+    (typeof r.id !== "string" && typeof r.id !== "number") ||
+    typeof r.name !== "string"
+  )
     throw bad("set");
   const count = typeof r.card_count === "number" ? r.card_count : undefined;
-  return { id: String(r.id), name: r.name, game: "one-piece", cardCount: count, totalCardCount: count };
+  return {
+    id: String(r.id),
+    name: r.name,
+    game: "one-piece",
+    cardCount: count,
+    totalCardCount: count,
+  };
 }
 
 /* ---------- PriceCharting official API (sports cards) ----------

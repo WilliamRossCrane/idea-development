@@ -2,12 +2,21 @@
 // Verified from docs: base https://api.tcgapi.dev/v1, header X-API-Key, GET /search?q=&game=, GET /cards/{id}, response { data: [...] }.
 // NOT verified: the One Piece game slug (so it is configured via ONE_PIECE_GAME), the `rarity` filter name, set-browse paths.
 import type { CardProvider } from "../types";
-import { ProviderError, normaliseTcgapiCard, normaliseTcgapiSet } from "../normalise";
+import {
+  ProviderError,
+  normaliseTcgapiCard,
+  normaliseTcgapiPrices,
+  normaliseTcgapiSet,
+} from "../normalise";
 
 const BASE = "https://api.tcgapi.dev/v1";
 const GAME = process.env.ONE_PIECE_GAME || "one-piece-card-game";
 
-async function request(path: string, signal?: AbortSignal, headers?: HeadersInit): Promise<any> {
+async function request(
+  path: string,
+  signal?: AbortSignal,
+  headers?: HeadersInit,
+): Promise<any> {
   let res: Response;
   try {
     res = await fetch(BASE + path, {
@@ -52,7 +61,10 @@ export const tcgapiOnePiece: CardProvider = {
     let raw: any;
     const browsingSet = Boolean(q.setId && (!q.q || q.q.length < 2));
     if (browsingSet && q.setId) {
-      raw = await get(`/sets/${encodeURIComponent(q.setId)}/cards?per_page=${size}&page=${page}`, signal);
+      raw = await get(
+        `/sets/${encodeURIComponent(q.setId)}/cards?per_page=${size}&page=${page}`,
+        signal,
+      );
     } else {
       const p = [
         `q=${encodeURIComponent(q.q!)}`,
@@ -67,10 +79,15 @@ export const tcgapiOnePiece: CardProvider = {
     if (!Array.isArray(raw?.data))
       throw new ProviderError("malformed", "Unexpected search format");
     const cards = raw.data
-        .filter(isCard)
-        .map((c: unknown) => normaliseTcgapiCard(c, "one-piece"))
-        .filter((card: any) => !q.q || card.name.toLowerCase().includes(q.q.toLowerCase()))
-        .map((card: any) => q.setId && !card.setId ? { ...card, setId: q.setId } : card);
+      .filter(isCard)
+      .map((c: unknown) => normaliseTcgapiCard(c, "one-piece"))
+      .filter(
+        (card: any) =>
+          !q.q || card.name.toLowerCase().includes(q.q.toLowerCase()),
+      )
+      .map((card: any) =>
+        q.setId && !card.setId ? { ...card, setId: q.setId } : card,
+      );
     return {
       cards,
       page,
@@ -81,11 +98,11 @@ export const tcgapiOnePiece: CardProvider = {
   },
   async getCard(id, signal) {
     try {
-      const card = normaliseTcgapiCard(
-        (await get(`/cards/${encodeURIComponent(id)}`, signal))?.data,
-        "one-piece",
-      );
-      return { card, prices: [] };
+      const raw = (await get(`/cards/${encodeURIComponent(id)}`, signal))?.data;
+      return {
+        card: normaliseTcgapiCard(raw, "one-piece"),
+        prices: normaliseTcgapiPrices(raw),
+      };
     } catch (e) {
       if (e instanceof ProviderError && e.code === "not-found") return null;
       throw e;
@@ -93,15 +110,24 @@ export const tcgapiOnePiece: CardProvider = {
   },
   async getSets(_language, signal) {
     const sets = [];
-    let page = 1, hasMore = true;
+    let page = 1,
+      hasMore = true;
     while (hasMore && page <= 20) {
-      const raw = await getPublic(`/games/${encodeURIComponent(GAME)}/sets?per_page=100&page=${page}`, signal);
-      if (!Array.isArray(raw?.data)) throw new ProviderError("malformed", "Unexpected set list format");
+      const raw = await getPublic(
+        `/games/${encodeURIComponent(GAME)}/sets?per_page=100&page=${page}`,
+        signal,
+      );
+      if (!Array.isArray(raw?.data))
+        throw new ProviderError("malformed", "Unexpected set list format");
       sets.push(...raw.data.map(normaliseTcgapiSet));
       hasMore = Boolean(raw.meta?.has_more);
       page += 1;
     }
-    if (hasMore) throw new ProviderError("malformed", "One Piece set list exceeded the pagination limit");
+    if (hasMore)
+      throw new ProviderError(
+        "malformed",
+        "One Piece set list exceeded the pagination limit",
+      );
     return sets;
   },
 };
