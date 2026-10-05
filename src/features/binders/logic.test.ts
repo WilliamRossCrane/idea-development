@@ -1,9 +1,34 @@
 import { describe, it, expect } from "vitest";
-import { createBinder, placeItem, moveSlot, clearSlot, removeItem, addPage, deletePage, duplicatePage, movePage, pageWindow,
-  findItem, itemAt, occupiedCount, newItem, copiesOf, placedItemIds, serialise, deserialise, emptyStore, firstEmpty } from "./logic";
+import {
+  createBinder,
+  placeItem,
+  moveSlot,
+  clearSlot,
+  removeItem,
+  addPage,
+  deletePage,
+  duplicatePage,
+  movePage,
+  pageWindow,
+  findItem,
+  itemAt,
+  occupiedCount,
+  newItem,
+  copiesOf,
+  placedItemIds,
+  serialise,
+  deserialise,
+  emptyStore,
+  firstEmpty,
+} from "./logic";
 import type { CardDefinition } from "@/services/cards/types";
 
-const card: CardDefinition = { id: "pokemon:base1-4", providerId: "base1-4", game: "pokemon", name: "Charizard" };
+const card: CardDefinition = {
+  id: "pokemon:base1-4",
+  providerId: "base1-4",
+  game: "pokemon",
+  name: "Charizard",
+};
 const mk = () => createBinder({ name: "Test", game: "pokemon", pageCount: 3 });
 const L = (page: number, position: number) => ({ page, position });
 
@@ -12,13 +37,22 @@ describe("binder creation", () => {
     const b = mk();
     expect(b.pages).toHaveLength(3);
     for (const p of b.pages) expect(p.slots).toHaveLength(9);
-    expect(b.pages[0].slots.map(s => s.position)).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+    expect(b.pages[0].slots.map((s) => s.position)).toEqual([
+      0, 1, 2, 3, 4, 5, 6, 7, 8,
+    ]);
     expect(occupiedCount(b)).toBe(0);
   });
   it("supports other pocket counts and clamps page count", () => {
-    expect(createBinder({ name: "x", game: "mixed", pageCount: 2, pockets: 4 }).pages[0].slots).toHaveLength(4);
-    expect(createBinder({ name: "x", game: "mixed", pageCount: 0 }).pages).toHaveLength(1);
-    expect(createBinder({ name: "  ", game: "mixed", pageCount: 1 }).name).toBe("Untitled binder");
+    expect(
+      createBinder({ name: "x", game: "mixed", pageCount: 2, pockets: 4 })
+        .pages[0].slots,
+    ).toHaveLength(4);
+    expect(
+      createBinder({ name: "x", game: "mixed", pageCount: 0 }).pages,
+    ).toHaveLength(1);
+    expect(createBinder({ name: "  ", game: "mixed", pageCount: 1 }).name).toBe(
+      "Untitled binder",
+    );
   });
 });
 describe("placing, moving, swapping, removing", () => {
@@ -66,12 +100,20 @@ describe("placing, moving, swapping, removing", () => {
 });
 describe("duplicate copies", () => {
   it("treats each copy as an independent item", () => {
-    const one = newItem(card), two = newItem(card);
+    const one = newItem(card),
+      two = newItem(card);
     const items = { [one.id]: one, [two.id]: two };
     expect(copiesOf(items, card.id)).toBe(2);
     const b = placeItem(placeItem(mk(), L(0, 0), one.id), L(0, 1), two.id);
     expect(placedItemIds([b]).size).toBe(2);
     expect(occupiedCount(b)).toBe(2);
+  });
+  it("stores a physical printing on the copy", () => {
+    expect(newItem(card, "reverse")).toMatchObject({
+      card,
+      printing: "reverse",
+      status: "Owned",
+    });
   });
 });
 describe("page management", () => {
@@ -98,7 +140,8 @@ describe("page management", () => {
 });
 describe("persistence serialisation", () => {
   it("round-trips a store", () => {
-    const it1 = newItem(card), b = placeItem(mk(), L(1, 2), it1.id);
+    const it1 = newItem(card),
+      b = placeItem(mk(), L(1, 2), it1.id);
     const s = { ...emptyStore(), binders: [b], items: { [it1.id]: it1 } };
     expect(deserialise(serialise(s))).toEqual(s);
   });

@@ -110,6 +110,7 @@ export function Library({
   wide?: boolean;
   searchRef?: React.RefObject<HTMLInputElement | null>;
 }) {
+  const { items } = useStore();
   const [game, setGame] = useState<CardGame>(defaultGame);
   const [language, setLanguage] = useState("en"),
     [setId, setSetId] = useState("");
@@ -201,6 +202,22 @@ export function Library({
     ? "grid-cols-[repeat(auto-fill,minmax(140px,1fr))]"
     : "grid-cols-2";
   const Cell = draggable ? DraggableTile : Tile;
+  const selectedSet = sets.find((s) => s.id === setId);
+  const ownedSetCards = selectedSet
+    ? new Set(
+        Object.values(items)
+          .filter(
+            (item) =>
+              (item.status === "Owned" || item.status === "For Trade") &&
+              item.card.game === "pokemon" &&
+              (item.card.language ?? "en") === language &&
+              item.card.setId === selectedSet.id,
+          )
+          .map((item) => item.card.id),
+      ).size
+    : 0;
+  const setCardCount =
+    selectedSet?.totalCardCount ?? selectedSet?.cardCount ?? 0;
 
   return (
     <div className="space-y-3">
@@ -284,12 +301,35 @@ export function Library({
           Set list unavailable. Card search is still available.
         </p>
       )}
-      {setId && sets.find((s) => s.id === setId) && (
-        <p className="text-xs text-mute">
-          {sets.find((s) => s.id === setId)?.cardCount ?? 0} cards in checklist
-          {sets.find((s) => s.id === setId)?.officialCardCount != null &&
-            ` · ${sets.find((s) => s.id === setId)?.officialCardCount} official`}
-        </p>
+      {selectedSet && (
+        <div className="space-y-1 text-xs text-mute">
+          <div className="flex justify-between gap-2">
+            <span className="truncate">{selectedSet.name}</span>
+            <span className="shrink-0">
+              {ownedSetCards} / {setCardCount} owned
+            </span>
+          </div>
+          <div
+            role="progressbar"
+            aria-label={`${selectedSet.name} completion`}
+            aria-valuemin={0}
+            aria-valuemax={setCardCount}
+            aria-valuenow={Math.min(ownedSetCards, setCardCount)}
+            className="h-1.5 overflow-hidden rounded-full bg-line"
+          >
+            <div
+              className="h-full bg-accent"
+              style={{
+                width: `${setCardCount ? Math.min(100, (ownedSetCards / setCardCount) * 100) : 0}%`,
+              }}
+            />
+          </div>
+          <p>
+            Provider checklist · {setCardCount} cards
+            {selectedSet.officialCardCount != null &&
+              ` · ${selectedSet.officialCardCount} official`}
+          </p>
+        </div>
       )}
       {source === "mock" && (
         <p className="rounded-lg bg-line/50 px-3 py-2 text-xs text-mute">
