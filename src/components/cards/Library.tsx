@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import {
+  ONE_PIECE_LANGUAGES,
   POKEMON_LANGUAGES,
   type CardDefinition,
   type CardGame,
@@ -121,6 +122,7 @@ export function Library({
     q = useDebounced(input, 300);
   const [rarity, setRarity] = useState("");
   const [cards, setCards] = useState<CardDefinition[]>([]);
+  const [resultsTotal, setResultsTotal] = useState<number>();
   const [page, setPage] = useState(1),
     [more, setMore] = useState(false),
     [source, setSource] = useState<string>();
@@ -138,7 +140,9 @@ export function Library({
     }
     const ac = new AbortController();
     const params = new URLSearchParams({ game });
-    if (game === "pokemon") params.set("language", language);
+    if (game === "pokemon" || game === "one-piece")
+      params.set("language", language);
+    setSets([]);
     setSetsLoading(true);
     setSetsError(null);
     fetch(`/api/cards/sets?${params}`, {
@@ -164,12 +168,15 @@ export function Library({
     setLoading(true);
     setError(null);
     setCards([]);
+    setSource(undefined);
+    setResultsTotal(undefined);
     setRarity("");
     setPage(1);
     fetchPage(game, q, language, setId, 1, ac.signal)
       .then((r) => {
         setCards(r.cards);
         setMore(r.hasMore);
+        setResultsTotal(r.total);
         setSource(r.source);
         setLoading(false);
       })
@@ -190,6 +197,7 @@ export function Library({
         setCards((c) => [...c, ...r.cards]);
         setPage((p) => p + 1);
         setMore(r.hasMore);
+        if (r.total != null) setResultsTotal(r.total);
       })
       .catch((e) => {
         if (e.name !== "AbortError") setError(e.message || FRIENDLY);
@@ -220,7 +228,13 @@ export function Library({
       ).size
     : 0;
   const setCardCount =
-    selectedSet?.totalCardCount ?? selectedSet?.cardCount ?? 0;
+    selectedSet?.totalCardCount ?? selectedSet?.cardCount ?? resultsTotal ?? 0;
+  const languages =
+    game === "pokemon"
+      ? POKEMON_LANGUAGES
+      : game === "one-piece"
+        ? ONE_PIECE_LANGUAGES
+        : [];
 
   return (
     <div className="space-y-3">
@@ -241,7 +255,7 @@ export function Library({
             </option>
           ))}
         </select>
-        {game === "pokemon" && (
+        {languages.length > 0 && (
           <select
             aria-label="Language"
             value={language}
@@ -251,7 +265,7 @@ export function Library({
             }}
             className="rounded-lg border border-line bg-panel px-2 py-2 text-sm"
           >
-            {POKEMON_LANGUAGES.map((l) => (
+            {languages.map((l) => (
               <option key={l.code} value={l.code}>
                 {l.name}
               </option>
@@ -304,7 +318,9 @@ export function Library({
       </div>
       {setsError && (
         <p role="status" className="text-xs text-mute">
-          Set list unavailable. Card search is still available.
+          {game === "one-piece" && language === "ja"
+            ? "Japanese One Piece sets require a configured BerryWallet API key."
+            : "Set list unavailable. Card search is still available."}
         </p>
       )}
       {selectedSet && (
@@ -377,7 +393,9 @@ export function Library({
       {!loading && !error && shown.length === 0 && (
         <p className="text-sm text-mute">
           {q || input
-            ? "No cards match your search."
+            ? game === "one-piece" && language === "ja" && !setId
+              ? "Choose a Japanese set to search within it."
+              : "No cards match your search."
             : game === "one-piece" || game === "sports"
               ? "Search to browse cards."
               : "No cards to show."}

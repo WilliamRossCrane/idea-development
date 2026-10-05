@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import {
+  ONE_PIECE_LANGUAGES,
   POKEMON_LANGUAGES,
   PRINTING_LABELS,
   type CardDefinition,
@@ -71,8 +72,9 @@ export function CardModal({
 
   const owned = copiesOf(items, detail.id);
   const languageName =
-    POKEMON_LANGUAGES.find((l) => l.code === detail.language)?.name ??
-    detail.language;
+    (detail.game === "pokemon" ? POKEMON_LANGUAGES : ONE_PIECE_LANGUAGES).find(
+      (l) => l.code === detail.language,
+    )?.name ?? detail.language;
   const rows: [string, string | number | undefined][] = [
     ["Game", GAME_LABEL[detail.game]],
     ["Language", languageName],

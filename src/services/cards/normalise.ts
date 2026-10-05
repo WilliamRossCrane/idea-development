@@ -127,6 +127,119 @@ export function normaliseTcgdexPrices(raw: unknown): CardPriceQuote[] {
   return quotes;
 }
 
+const berryLanguage = (language?: string) =>
+  language === "jp" || language === "ja" ? "ja" : "en";
+
+export function normaliseBerryWalletSet(raw: unknown): CardSet {
+  const set = raw as Record<string, any>;
+  const id = set?.group_id ?? set?.set_code;
+  if (id == null || typeof set?.name !== "string") throw bad("BerryWallet set");
+  const count = typeof set.card_count === "number" ? set.card_count : undefined;
+  return {
+    id: String(id),
+    name: set.name,
+    game: "one-piece",
+    language: berryLanguage(set.language),
+    cardCount: count,
+    totalCardCount: count,
+  };
+}
+
+export function normaliseBerryWalletCard(
+  raw: unknown,
+  options: { language?: string; setId?: string; setName?: string } = {},
+): CardDefinition {
+  const card = raw as Record<string, any>;
+  const providerId = card?.id ?? card?.card_id;
+  const name = card?.name ?? card?.card_name;
+  if (providerId == null || typeof name !== "string")
+    throw bad("BerryWallet card");
+  const language = berryLanguage(
+    card.set?.language ?? card.language ?? options.language,
+  );
+  const rawSetId =
+    options.setId ??
+    card.set?.group_id ??
+    card.group_id ??
+    card.set_id ??
+    card.set_code;
+  const image = typeof card.image_url === "string" ? card.image_url : undefined;
+  const printing = card.variant ?? card.sub_type_name;
+  const printings = Array.isArray(card.printings)
+    ? card.printings.filter(
+        (value: unknown): value is string => typeof value === "string",
+      )
+    : typeof printing === "string"
+      ? [
+          printing.toLowerCase() === "normal"
+            ? "normal"
+            : printing.toLowerCase(),
+        ]
+      : undefined;
+  const extra: Record<string, string | number | undefined> = {};
+  for (const [key, value] of Object.entries({
+    color: card.ext_color ?? card.card_color,
+    cardType: card.card_type,
+    power: card.ext_power ?? card.card_power,
+    life: card.ext_life ?? card.life,
+    subtypes: card.ext_subtypes ?? card.sub_types,
+    attribute: card.ext_attribute ?? card.attribute,
+    description: card.ext_description ?? card.card_text,
+  })) {
+    if (typeof value === "string" || typeof value === "number")
+      extra[key] = value;
+  }
+  return {
+    id: `one-piece:berry:${language}:${providerId}`,
+    providerId: String(providerId),
+    game: "one-piece",
+    name,
+    language,
+    setId: rawSetId == null ? undefined : String(rawSetId),
+    setName: options.setName ?? card.set?.name ?? card.set_name,
+    cardNumber: card.card_number ?? card.card_set_id,
+    rarity: typeof card.rarity === "string" ? card.rarity : undefined,
+    imageUrl: image,
+    thumbUrl: image,
+    printings,
+    extra,
+  };
+}
+
+export function normaliseBerryWalletPrices(raw: unknown): CardPriceQuote[] {
+  if (!raw || typeof raw !== "object") return [];
+  const card = raw as Record<string, any>,
+    variant = card.variant ?? card.sub_type_name ?? "normal";
+  const printing =
+    String(variant).toLowerCase() === "normal"
+      ? "normal"
+      : String(variant).toLowerCase();
+  const quotes: CardPriceQuote[] = [];
+  const tcg = card.tcgplayer?.prices;
+  if (typeof tcg?.market_price === "number" && tcg.market_price > 0) {
+    quotes.push({
+      source: "TCGplayer",
+      currency: "USD",
+      printing,
+      amount: tcg.market_price,
+      lowPrice: typeof tcg.low_price === "number" ? tcg.low_price : undefined,
+      updatedAt: tcg.updated_at,
+    });
+  }
+  const market = card.cardmarket?.prices;
+  if (typeof market?.avg === "number" && market.avg > 0) {
+    quotes.push({
+      source: "Cardmarket",
+      currency: "EUR",
+      printing,
+      amount: market.avg,
+      lowPrice: typeof market.low === "number" ? market.low : undefined,
+      updatedAt: market.updated_at,
+    });
+  }
+  return quotes;
+}
+
 /* ---------- tcgapi.dev (One Piece) ----------
  * Documented card fields: id, name, number, rarity, image_url, set_name, product_type ("Cards" | "Sealed Products"),
  * custom_attributes (game-specific, keys NOT verified for One Piece, so passed through untouched).

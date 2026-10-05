@@ -1,4 +1,9 @@
 export type CardGame = "pokemon" | "one-piece" | "sports";
+export type OnePieceLanguage = "en" | "ja";
+export const ONE_PIECE_LANGUAGES: { code: OnePieceLanguage; name: string }[] = [
+  { code: "en", name: "English" },
+  { code: "ja", name: "Japanese" },
+];
 export type PokemonLanguage =
   | "en"
   | "ja"
@@ -101,6 +106,7 @@ export interface CardSearchResult {
   page: number;
   pageSize: number;
   hasMore: boolean;
+  total?: number;
   source: "api" | "mock"; // lets the UI label sample data honestly
 }
 export interface CardProvider {
