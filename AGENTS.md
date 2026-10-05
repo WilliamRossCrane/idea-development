@@ -10,28 +10,26 @@ Next.js (App Router) + React + TypeScript + Tailwind + dnd-kit. Local persistenc
 behind `src/repositories/binderRepository.ts` so Supabase can replace it later. Vercel-compatible. No auth, no backend DB in V1.
 Design: Claude/Linear/Notion-like. Warm neutrals, subtle borders, rounded panels, no gaming UI. Original identity, don't copy Claude.
 
-## Status (honest)
-Nothing in this repo has been `npm install`ed, built, linted or run in a browser. Written in an offline sandbox.
-Only the pure logic was executed: `src/features/binders/logic.ts` + `logic.test.ts` passed 15/15 (compiled with tsc, run under a vitest shim).
+## Status (checked 2026-10-05)
+The project is installed, linted, tested, built, and has been checked in a browser. Git was initialized locally; implementation is committed in small milestones.
 
 | Area | State |
 |---|---|
-| `src/features/binders/logic.ts` (+ test) | DONE and run. Create binder, 9 slots/page, place/move/swap/remove (one `placeItem`), page add/delete-empty/duplicate-layout/reorder, compact navigator, duplicates, (de)serialisation. |
-| `src/repositories/binderRepository.ts` | Written, type-checked only. `LocalBinderRepository` (localStorage), behind a `BinderRepository` interface for a future Supabase swap. |
-| `src/features/store.tsx` | Written, NOT run. In-memory state + diff-based persistence through the repository. Hosts the card detail modal. |
-| UI: dashboard, all-binders + create dialog, binder workspace (dnd-kit: library>slot, slot>slot swap, cross-page via page buttons, remove zone, drag overlay, tap-to-select-then-place, keyboard sensor), page navigator/jump, overview with page reorder buttons, library page, collection page (All / In binder / Unsorted / Wishlist / For Trade, status + condition), card modal, skeletons, friendly errors | Written, NOT run. Expect small compile/runtime fixes on first `npm run dev`. |
-| Providers (`src/services/cards`) | TCGdex (Pokémon), tcgapi.dev (One Piece, needs `ONE_PIECE_API_KEY` + `ONE_PIECE_GAME`), PriceCharting (sports/Topps, paid `SPORTS_CARD_API_KEY`), labelled mocks as fallback. Written from docs, NEVER called live. Unverified: One Piece game slug / `rarity` param / `custom_attributes` keys; sports coverage and "Name #12 [Variant]" title format. |
+| Build and tests | `npm run lint`, `npm test`, and `npm run build` pass. Browser checks covered binder create/search/drag/swap/page/reload persistence and Pokémon locale/set/printing/price flows. |
+| `src/features/binders/logic.ts` (+ test) | Create binder, 9 slots/page, place/move/swap/remove, page management, duplicates, serialization; collection copies retain selected printing. |
+| `src/repositories/binderRepository.ts` / `src/features/store.tsx` | LocalStorage metadata persistence behind `BinderRepository`; binder and collection persistence was browser-checked. |
+| Library | Pokémon locale selector, provider set lists/checklist counts, owned-card progress, and physical-printing selection are implemented. Set progress counts distinct owned/for-trade cards, not wishlist/sold copies. |
+| Pokémon provider | TCGdex locale catalogs and set counts are live and verified (including Japanese). English TCGplayer USD and Cardmarket EUR quotes are shown as dated AUD estimates; sampled Japanese cards had no price data. |
+| One Piece provider | Public TCG API set metadata is live (127 sets verified); card search/set cards require `ONE_PIECE_API_KEY`. The verified slug defaults to `one-piece-card-game`. No Japanese One Piece catalog was verified; no key is configured in this workspace, so card results remain labelled sample data. |
+| Sports provider | PriceCharting adapter exists but is unverified. No configured key; Topps Soccer/UFC coverage, variants, images, and price fields are not confirmed. |
 | `public/prototype.html` | Older single-file vanilla prototype. Has features the React app lacks (see below). Reference only. |
 
-## NOT built yet (do these next)
-1. First run: `npm install`, `npm run lint`, `npm test`, `npm run build`, `npm run dev`; fix what breaks (pin dependency versions afterwards).
-2. Image uploads: binder cover/background/page background (cover/fit/position/opacity), custom image per collection item. Prototype has a working IndexedDB + resize implementation to port into `src/services/images/`. `CollectionItem.customImageKey` and `Binder.appearance` already exist in the model.
-3. Binder customisation UI (title edit, accent, presets Minimal/Dark/Cream/Black/Navy). Appearance accent is only set at creation (default).
-4. Filters beyond game + client-side rarity (set, type, colour, sport, year, brand...). `CardSearchQuery.filters` and the providers already accept them; the library UI doesn't send them.
-5. Collection item editing beyond status/condition (notes, graded details, acquired date, price, quantity).
-6. Responsive polish: library as a drawer on tablet; test touch dragging (tiles use `touch-none`; tap-to-place is the fallback).
-7. Import and Settings pages (sidebar shows them disabled), README screenshots, Vercel deploy check.
-8. Verify real One Piece / sports providers with real keys; adjust normalisers and tests to the actual responses.
+## Remaining catalog work
+1. Find a documented, licensed Japanese One Piece catalog with set/card checklists and variant identity. Do not infer Japanese coverage from the English-named TCG API game.
+2. Configure a TCG API key and verify One Piece card search, set cards, language coverage, and source terms against representative live cards.
+3. Verify licensed Topps Soccer and UFC catalog/pricing coverage and an Australian-market price feed. Keep foreign-currency conversions labeled as estimates.
+4. Add provider fixtures and coverage reports for missing/duplicate cards, promos, variants, pagination, and price freshness before claiming set completeness.
+5. Image uploads, binder customization, advanced sport filters, richer collection metadata, responsive polish, import/settings pages, screenshots, and deployment verification remain unbuilt.
 
 ## Rules
 - Never expose API keys client-side. Providers run only in server code (`/api/cards`).

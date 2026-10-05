@@ -4,26 +4,25 @@ Organise physical trading-card binders digitally. See `AGENTS.md` for current st
 ## Run
 ```bash
 npm install
-cp .env.example .env.local   # optional: leave blank to use sample data for One Piece / sports
 npm run dev                  # http://localhost:3000 (old prototype at /prototype.html)
-npm test                     # vitest: normalisers + mock provider
+npm test                     # vitest
 npm run lint                 # tsc --noEmit
 npm run build
 ```
-`package.json` uses `latest` for dependencies; pin versions after your first successful install.
+For live One Piece card search, add `ONE_PIECE_API_KEY` to `.env.local`; the game slug defaults to `one-piece-card-game`. Without a key, One Piece and sports searches use clearly labelled sample data. Pokémon uses public TCGdex data without a key.
 
 ## Card providers
-| Game | Provider | Needs | Notes |
-|---|---|---|---|
-| Pokémon | TCGdex (`tcgdex.ts`) | nothing | List results carry no set name/rarity; fetch a single card for those. |
-| One Piece | tcgapi.dev (`tcgapi.ts`) | `ONE_PIECE_API_KEY`, `ONE_PIECE_GAME` | Free key = 100 req/day. Falls back to labelled sample data without both vars. |
-| Sports/Topps | PriceCharting API (`sports.ts`) | `SPORTS_CARD_API_KEY` (paid) | Topps has no public API. No card images from this API; users can upload their own. Falls back to sample data. |
+| Game | Provider | Coverage and requirements |
+|---|---|---|
+| Pokémon | TCGdex | Public localized catalogs for English, Japanese, French, German, Spanish, Italian, Portuguese, Brazilian Portuguese, Korean, Chinese (Traditional/Simplified), Indonesian, Thai, and Dutch. Set lists and checklist counts are available. Cardmarket EUR and TCGplayer USD prices are shown as dated AUD estimates when present; Japanese quotes were not present in sampled cards. |
+| One Piece | tcgapi.dev | Public English-named set metadata is browsable (127 sets verified). Card search/set cards require `ONE_PIECE_API_KEY`; the API slug defaults to `one-piece-card-game`. No Japanese One Piece catalog was verified. |
+| Sports / Topps | PriceCharting | Requires `SPORTS_CARD_API_KEY` (paid). Soccer/UFC product coverage, images, variants, and price fields have not been verified. |
 
-All providers sit behind `CardProvider` (`src/services/cards/types.ts`) and are called only from `/api/cards`.
+Provider keys are server-only and must never use a `NEXT_PUBLIC_` prefix. This app has no marketplace features.
 
 ## Known limitations
-The app has never been installed or run, and providers have never been called live. Image uploads, binder customisation UI and most filters aren't built. See AGENTS.md for the full status and next steps.
+Japanese One Piece still needs a verified, licensed catalog source. Topps Soccer/UFC coverage and an Australian-market price source are unverified. Foreign currency conversions are estimates, not Australian-market quotes. See `AGENTS.md` for implementation status and remaining work.
 
 ## Architecture
 `src/features/binders/logic.ts` (pure logic) > `src/features/store.tsx` (React state) > `src/repositories/binderRepository.ts` (localStorage, swappable for Supabase).
-Card data: UI > `/api/cards` > `getProvider(game)` > provider > normaliser > `CardDefinition`. Collection items embed their `CardDefinition`.
+Card data: UI > `/api/cards` > `getProvider(game)` > provider > normaliser > `CardDefinition`. Provider prices are returned separately from card identity.

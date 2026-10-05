@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getProvider } from "@/services/cards/providers";
+import { tcgapiOnePiece } from "@/services/cards/providers/tcgapi";
 import { ProviderError } from "@/services/cards/normalise";
 import { POKEMON_LANGUAGES } from "@/services/cards/types";
 
@@ -17,10 +18,8 @@ export async function GET(req: NextRequest) {
       { status: 400 },
     );
   try {
-    const sets = await getProvider(game as (typeof GAMES)[number]).getSets(
-      language,
-      req.signal,
-    );
+    const provider = game === "one-piece" ? tcgapiOnePiece : getProvider(game as (typeof GAMES)[number]);
+    const sets = await provider.getSets(language, req.signal);
     return NextResponse.json(
       { sets },
       {

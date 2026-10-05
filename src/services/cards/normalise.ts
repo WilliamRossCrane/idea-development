@@ -152,6 +152,8 @@ export function normaliseTcgapiCard(
     providerId: String(r.id),
     game,
     name: r.name,
+    language: typeof r.language === "string" ? r.language : undefined,
+    setId: r.set_id != null ? String(r.set_id) : undefined,
     setName: typeof r.set_name === "string" ? r.set_name : undefined,
     cardNumber: r.number != null ? String(r.number) : undefined,
     rarity: typeof r.rarity === "string" ? r.rarity : undefined,
@@ -159,6 +161,14 @@ export function normaliseTcgapiCard(
     thumbUrl: img,
     extra,
   };
+}
+
+export function normaliseTcgapiSet(raw: unknown): CardSet {
+  const r = raw as Record<string, any>;
+  if (!r || (typeof r.id !== "string" && typeof r.id !== "number") || typeof r.name !== "string")
+    throw bad("set");
+  const count = typeof r.card_count === "number" ? r.card_count : undefined;
+  return { id: String(r.id), name: r.name, game: "one-piece", cardCount: count, totalCardCount: count };
 }
 
 /* ---------- PriceCharting official API (sports cards) ----------

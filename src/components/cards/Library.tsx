@@ -130,16 +130,18 @@ export function Library({
   const moreAbort = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    if (game !== "pokemon") {
+    if (game === "sports") {
       setSets([]);
       setSetsLoading(false);
       setSetsError(null);
       return;
     }
     const ac = new AbortController();
+    const params = new URLSearchParams({ game });
+    if (game === "pokemon") params.set("language", language);
     setSetsLoading(true);
     setSetsError(null);
-    fetch(`/api/cards/sets?${new URLSearchParams({ game, language })}`, {
+    fetch(`/api/cards/sets?${params}`, {
       signal: ac.signal,
     })
       .then(async (r) => {
@@ -209,8 +211,8 @@ export function Library({
           .filter(
             (item) =>
               (item.status === "Owned" || item.status === "For Trade") &&
-              item.card.game === "pokemon" &&
-              (item.card.language ?? "en") === language &&
+              item.card.game === selectedSet.game &&
+              (!selectedSet.language || (item.card.language ?? "en") === selectedSet.language) &&
               item.card.setId === selectedSet.id,
           )
           .map((item) => item.card.id),
@@ -239,7 +241,6 @@ export function Library({
           ))}
         </select>
         {game === "pokemon" && (
-          <>
             <select
               aria-label="Language"
               value={language}
@@ -255,6 +256,8 @@ export function Library({
                 </option>
               ))}
             </select>
+        )}
+        {(game === "pokemon" || game === "one-piece") && (
             <select
               aria-label="Card set"
               value={setId}
@@ -266,12 +269,11 @@ export function Library({
                 {setsLoading ? "Loading sets…" : "All sets"}
               </option>
               {sets.map((s) => (
-                <option key={`${s.language}:${s.id}`} value={s.id}>
+                <option key={`${s.game}:${s.language ?? ""}:${s.id}`} value={s.id}>
                   {s.name} · {s.cardCount ?? "?"}
                 </option>
               ))}
             </select>
-          </>
         )}
         <input
           ref={searchRef}
