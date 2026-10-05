@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>CardBinder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#faf9f5;--panel:#fff;--tx:#2b2a27;--mut:#85817a;--bd:#e7e4dc;--ac:#c2693f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1e1c;--panel:#292826;--tx:#ece9e1;--mut:#9a958b;--bd:#3a3834}}
+:root[data-theme="dark"]{--bg:#1f1e1c;--panel:#292826;--tx:#ece9e1;--mut:#9a958b;--bd:#3a3834}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:14px/1.45 Georgia,"Iowan Old Style",serif}
+button,input,select{font:inherit;color:inherit}
+button{background:var(--panel);border:1px solid var(--bd);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--ac)}button:focus-visible,input:focus-visible,select:focus-visible,.slot:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+button.pri{background:var(--ac);border-color:var(--ac);color:#fff}
+input,select{background:var(--panel);border:1px solid var(--bd);border-radius:8px;padding:6px 10px}
+#app{display:flex;height:100%}
+nav{width:190px;border-right:1px solid var(--bd);padding:18px 12px;display:flex;flex-direction:column;gap:4px;flex:none}
+nav h1{font-size:20px;margin:0 8px 16px}nav button{text-align:left;border:0;background:none;padding:8px}
+nav button.on{background:var(--panel);border:1px solid var(--bd)}nav small{margin-top:auto;color:var(--mut);padding:8px}
+main{flex:1;overflow:auto;padding:28px 36px;min-width:0}
+h2{font-size:26px;margin:0 0 4px;font-weight:600}.mut{color:var(--mut)}
+.stats{display:flex;gap:12px;margin:18px 0}.stat{background:var(--panel);border:1px solid var(--bd);border-radius:14px;padding:14px 20px}.stat b{font-size:24px;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.bcard{background:var(--panel);border:1px solid var(--bd);border-radius:14px;padding:16px;cursor:pointer;border-top:4px solid var(--c)}
+.bcard:hover{box-shadow:0 2px 10px #0001}
+.ws{display:flex;gap:24px;height:100%}.ws>.bind{flex:1;overflow:auto;text-align:center;min-width:0}
+.page{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:480px;margin:16px auto;padding:16px;background:var(--panel);border:1px solid var(--bd);border-radius:18px}
+.slot{aspect-ratio:63/88;border:1px dashed var(--bd);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--mut);background:#8881;cursor:pointer;position:relative;min-width:0}
+.slot.over{border-color:var(--ac);background:#c2693f22}.slot.sel{outline:2px solid var(--ac)}
+.art{width:100%;height:100%;border-radius:7px;background:linear-gradient(160deg,hsl(var(--h) 55% 62%),hsl(var(--h) 45% 32%));color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:6px;text-align:left;font-size:12px;box-shadow:inset 0 0 0 1px #fff3;overflow:hidden}
+.art b{font-weight:600;line-height:1.15}.art i{font-size:10px;opacity:.85;font-style:normal}
+.lib{width:300px;flex:none;border-left:1px solid var(--bd);padding-left:20px;overflow:auto}
+.lib.off{display:none}.lg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}.lg.wide{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.lc{cursor:grab}.lc .art{aspect-ratio:63/88;height:auto}.lc small{display:block;color:var(--mut);font-size:11px;margin-top:3px}.lc.sel .art{outline:3px solid var(--ac)}
+.bar{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.rm{margin:10px auto;max-width:480px;padding:10px;border:1px dashed var(--bd);border-radius:10px;color:var(--mut)}.rm.over{border-color:#b33;color:#b33}
+.ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.th{background:var(--panel);border:1px solid var(--bd);border-radius:12px;padding:8px;cursor:pointer}
+.th .m{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px}.th .m i{aspect-ratio:63/88;border-radius:2px;background:#8882}.th .m i.f{background:var(--ac)}
+dialog{border:1px solid var(--bd);border-radius:16px;background:var(--panel);color:var(--tx);padding:22px;max-width:340px}
+dialog::backdrop{background:#0006}
+@media(max-width:800px){nav{width:62px}nav h1,nav small{display:none}main{padding:16px}.ws{flex-direction:column;height:auto}.lib{width:auto;border:0;padding:0}}
+.page{position:relative;overflow:hidden}.pbg{position:absolute;inset:0;pointer-events:none}.th.over{border-color:var(--ac)}
+</style></head><body><div id="app"></div>
+<dialog id="dlg"></dialog>
+<script>
+// MOCK DATA ONLY — swap CARDS for a provider (TCGdex / One Piece API / sports API) behind searchCards()
+const CARDS=[
+["op-luffy","one-piece","Monkey D. Luffy","Romance Dawn","OP01-003","Leader",8],["op-zoro","one-piece","Roronoa Zoro","Romance Dawn","OP01-025","Rare",140],["op-nami","one-piece","Nami","Romance Dawn","OP01-016","Rare",35],["op-sanji","one-piece","Sanji","Romance Dawn","OP01-013","Uncommon",50],["op-shanks","one-piece","Shanks","Awakening","OP05-119","Secret Rare",0],
+["pk-pika","pokemon","Pikachu","Base Set","58/102","Common",48],["pk-char","pokemon","Charizard","Base Set","4/102","Rare Holo",20],["pk-mew","pokemon","Mew","Promo","8","Promo",320],["pk-umb","pokemon","Umbreon","Evolving Skies","95/203","Rare",260],["pk-geng","pokemon","Gengar","Fossil","5/62","Rare Holo",280],
+["sp-1","sports","Sample Striker","Sample Football 2024","#12","Base",150],["sp-2","sports","Sample Keeper","Sample Football 2024","#47","Parallel /99",200],["sp-3","sports","Sample Guard","Sample Basketball 2023","#7","Rookie",25],["sp-4","sports","Sample Pitcher","Sample Baseball 2022","#101","Base",100]
+].map(a=>({id:a[0],game:a[1],name:a[2],set:a[3],num:a[4],rarity:a[5],h:a[6]}));
+const G={all:"All games","one-piece":"One Piece",pokemon:"Pokémon",sports:"Topps / Sports"};
+const KEY="cardbinder.v1";
+// Image storage abstraction: blobs in IndexedDB (resized), keys in binder/item metadata. Swap for Supabase Storage later.
+const IMG={};let DB;
+const idb=()=>DB||(DB=new Promise((ok,no)=>{const r=indexedDB.open("cardbinder",1);r.onupgradeneeded=()=>r.result.createObjectStore("img");r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}));
+const tx=async(m,f)=>{const d=await idb();return new Promise((ok,no)=>{const t=d.transaction("img",m),q=f(t.objectStore("img"));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)})};
+async function imgPut(file){const bm=await createImageBitmap(file),k=Math.min(1,900/Math.max(bm.width,bm.height)),c=document.createElement("canvas");c.width=Math.round(bm.width*k);c.height=Math.round(bm.height*k);c.getContext("2d").drawImage(bm,0,0,c.width,c.height);
+ const blob=await new Promise(r=>c.toBlob(r,"image/jpeg",.82)),key=uid();await tx("readwrite",s=>s.put(blob,key));IMG[key]=URL.createObjectURL(blob);return key}
+const imgDel=k=>{if(!k)return;delete IMG[k];return tx("readwrite",s=>s.delete(k)).catch(()=>{})};
+async function imgInit(){try{const d=await idb();await new Promise(ok=>{const r=d.transaction("img").objectStore("img").openCursor();r.onsuccess=()=>{const c=r.result;if(c){IMG[c.key]=URL.createObjectURL(c.value);c.continue()}else ok()};r.onerror=ok})}catch(e){}render()}
+async function up(f,cb){try{const q=await navigator.storage?.estimate?.();if(q&&q.usage>q.quota*.8)alert("Browser storage is nearly full. Consider removing some images.");const k=await imgPut(f);cb(k);save();render()}catch(e){alert("Couldn't use that image. Try a JPG or PNG.")}}
+const uid=()=>Math.random().toString(36).slice(2,9);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const newPages=n=>Array.from({length:n},()=>Array(9).fill(null)); // 9-pocket; pocket count could be a binder field later
+let S={binders:[],items:{},view:"home",bid:null,pg:0,q:"",game:"all",lib:true,sel:null,ov:false,theme:""};
+try{const r=localStorage.getItem(KEY);if(r)S={...S,...JSON.parse(r)}}catch(e){}
+S.sel=null;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({binders:S.binders,items:S.items,theme:S.theme}))}catch(e){alert("Could not save: browser storage unavailable or full.")}};
+if(!S.binders.length){S.binders=[{id:uid(),name:"One Piece Collection",game:"one-piece",pages:newPages(10),accent:"#c2693f",at:Date.now()},{id:uid(),name:"Pokémon Collection",game:"pokemon",pages:newPages(10),accent:"#4a78b5",at:Date.now()-1}]}
+const card=id=>CARDS.find(c=>c.id===id);
+const B=()=>S.binders.find(b=>b.id===S.bid);
+const art=(c,it)=>{const u=it&&it.img&&IMG[it.img];return u?`<div class="art" style="background:center/cover url(${u})"><b style="background:#0009;padding:2px 4px;border-radius:4px">${esc(c.name)}</b></div>`:`<div class="art" style="--h:${c.h}"><b>${esc(c.name)}</b><i>${esc(c.num)}</i></div>`};
+const placed=()=>{const s=new Set();S.binders.forEach(b=>b.pages.forEach(p=>p.forEach(i=>i&&s.add(i))));return s};
+const copies=cid=>Object.values(S.items).filter(i=>i.cid===cid).length;
+const touch=b=>{b.at=Date.now();save();render()};
+
+function place(b,pi,pos,src){
+  let item;
+  if(src.startsWith("lib:")){item=uid();S.items[item]={cid:src.slice(4)}}
+  else if(src.startsWith("item:"))item=src.slice(5);
+  else if(src.startsWith("slot:")){const[,sp,ss]=src.split(":");item=b.pages[+sp][+ss];if(!item)return;
+    b.pages[+sp][+ss]=b.pages[pi][pos];b.pages[pi][pos]=item;return touch(b)}
+  b.pages.forEach(p=>{const i=p.indexOf(item);if(i>-1)p[i]=null}); // moving an owned copy out of its old slot
+  b.pages[pi][pos]=item;touch(b);
+}
+function removeSlot(b,src){if(!src.startsWith("slot:"))return;const[,p,s]=src.split(":");b.pages[+p][+s]=null;touch(b)}
+
+function libCards(){const q=S.q.toLowerCase();return CARDS.filter(c=>(S.game==="all"||c.game===S.game)&&(!S.rar||c.rarity===S.rar)&&(!q||[c.name,c.set,c.num,c.rarity].join(" ").toLowerCase().includes(q)))}
+function libHtml(wide){
+  const l=libCards();
+  return `<div class="bar" style="justify-content:flex-start"><input id="q" type="search" aria-label="Search cards" placeholder="Search name, set, number…" value="${esc(S.q)}">
+  <select id="g" aria-label="Game">${Object.entries(G).map(([k,v])=>`<option value="${k}" ${S.game===k?"selected":""}>${v}</option>`).join("")}</select><select id="r" aria-label="Rarity"><option value="">Any rarity</option>${[...new Set(CARDS.filter(c=>S.game==="all"||c.game===S.game).map(c=>c.rarity))].map(r=>`<option ${S.rar===r?"selected":""}>${r}</option>`).join("")}</select></div>
+  <div class="lg ${wide?"wide":""}">${l.map(c=>`<div class="lc ${S.sel==="lib:"+c.id?"sel":""}" draggable="true" data-src="lib:${c.id}" tabindex="0" role="button" aria-label="${esc(c.name)} ${esc(c.num)}">${art(c)}<small>${esc(c.set)} · ${esc(c.rarity)}${copies(c.id)?` · Owned ×${copies(c.id)}`:""} · <a href="#" data-info="${c.id}">details</a></small></div>`).join("")||`<p class="mut">No cards match your search.</p>`}</div>`}
+
+function slotHtml(b,pi,pos){
+  const id=b.pages[pi][pos],it=id&&S.items[id],c=it&&card(it.cid);
+  return `<div class="slot" data-pi="${pi}" data-pos="${pos}" tabindex="0" role="button" aria-label="Slot ${pos+1}${c?": "+esc(c.name):" empty"}" ${c?`draggable="true" data-src="slot:${pi}:${pos}"`:""}>${c?art(c,it):`<span>+<br>Add card</span>`}</div>`}
+
+function render(){
+  const b=B(),v=S.view,P=placed();
+  const nav=[["home","Home"],["binders","Binders"],["library","Library"],["collection","My Collection"]];
+  let h=`<nav><h1>CardBinder</h1>${nav.map(([k,t])=>`<button data-nav="${k}" class="${v===k||(v==="binder"&&k==="binders")?"on":""}">${t}</button>`).join("")}<button id="th">Toggle theme</button><small>Local collection</small></nav><main>`;
+  if(v==="home"||v==="binders"){
+    const slots=S.binders.reduce((n,b)=>n+b.pages.flat().filter(Boolean).length,0);
+    const rec=[...S.binders].sort((a,b)=>b.at-a.at);
+    h+=`<div class="bar" style="justify-content:space-between"><div><h2>${v==="home"?"Your binders":"All binders"}</h2><span class="mut">Organise your physical collection visually.</span></div><button class="pri" id="new">+ New binder</button></div>
+    <div class="stats"><div class="stat"><b>${Object.keys(S.items).length}</b>cards in collection</div><div class="stat"><b>${slots}</b>occupied slots</div><div class="stat"><b>${S.binders.length}</b>binders</div></div>
+    <div class="grid">${(v==="home"?rec:S.binders).map(x=>`<div class="bcard" style="--c:${x.accent}" data-open="${x.id}" tabindex="0" role="button"><b>${esc(x.name)}</b><br><span class="mut">${G[x.game]||"Mixed"} · ${x.pages.length} pages · ${x.pages.flat().filter(Boolean).length}/${x.pages.length*9} slots</span></div>`).join("")}</div>`;
+  }else if(v==="binder"&&b){
+    const pg=b.pages[S.pg];
+    h+=`<div class="ws"><div class="bind"><div class="bar" style="justify-content:space-between"><div style="text-align:left"><h2>${esc(b.name)}</h2><span class="mut">${G[b.game]||"Mixed"}</span></div>
+    <div class="bar"><button id="cz">Customise</button><button id="ovb">${S.ov?"Page view":"Overview"}</button><button id="tl">${S.lib?"Hide":"Show"} library</button></div></div>`;
+    if(S.ov){h+=`<div class="ov" style="margin-top:16px">${b.pages.map((p,i)=>`<div class="th" data-pgo="${i}" data-src="pgm:${i}" draggable="true" tabindex="0" role="button"><div class="m">${p.map(s=>`<i class="${s?"f":""}"></i>`).join("")}</div>Page ${i+1} · ${p.filter(Boolean).length}/9</div>`).join("")}</div>`}
+    else{h+=`<div class="page" style="border-top:4px solid ${b.accent};background:${b.pbg||"var(--panel)"}">${b.bg&&IMG[b.bg]?`<div class="pbg" style="background:url(${IMG[b.bg]}) center/${b.fit||"cover"} no-repeat;opacity:${b.op??.5}"></div>`:""}${pg.map((_,i)=>slotHtml(b,S.pg,i)).join("")}</div>
+    <div class="rm" id="rm">Drop here to remove from binder (card stays in Unsorted)</div>
+    <div class="bar"><button id="pv" ${S.pg?"":"disabled"}>← Previous</button><span>Page ${S.pg+1} of ${b.pages.length}</span><button id="nx" ${S.pg<b.pages.length-1?"":"disabled"}>Next →</button></div>
+    <div class="bar" style="margin-top:10px"><button id="ap">Add page</button><button id="dp">Duplicate page</button><button id="xp">Delete page</button><label>Jump <input id="jp" type="number" min="1" max="${b.pages.length}" style="width:64px"></label></div>`}
+    h+=`</div><aside class="lib ${S.lib?"":"off"}"><h3 style="margin:0 0 8px">Card library</h3>${libHtml(false)}</aside></div>`;
+  }else if(v==="library"){h+=`<h2>Card library</h2><p class="mut">Mock sample data. Drag cards onto a binder, or add them to your collection.</p>${libHtml(true)}`}
+  else if(v==="collection"){
+    const f=S.filter||"all",its=Object.entries(S.items).filter(([id])=>f==="all"||(f==="binder"?P.has(id):!P.has(id)));
+    h+=`<h2>My Collection</h2><div class="bar" style="justify-content:flex-start;margin:12px 0">${[["all","All"],["binder","In binder"],["unsorted","Unsorted"]].map(([k,t])=>`<button data-f="${k}" class="${f===k?"pri":""}">${t}</button>`).join("")}</div>
+    <div class="lg wide">${its.map(([id,i])=>{const c=card(i.cid);return `<div class="lc" draggable="true" data-src="item:${id}">${art(c,i)}<small>${i.st&&i.st!=="Owned"?i.st+" · ":""}${P.has(id)?"In binder":"Unsorted"} · <a href="#" data-info="${i.cid}" data-it="${id}">edit</a> · <a href="#" data-del="${id}">remove</a></small></div>`}).join("")||`<p class="mut">Nothing here yet.</p>`}</div>`}
+  else h+=`<h2>Binder not found</h2><button data-nav="home">Back home</button>`;
+  // unsorted tray in binder mode
+  document.getElementById("app").innerHTML=h+"</main>";
+  if(v==="binder"&&b){const un=Object.keys(S.items).filter(i=>!P.has(i));if(un.length&&S.lib){document.querySelector(".lib").insertAdjacentHTML("beforeend",`<h4>Unsorted (${un.length})</h4><div class="lg">${un.map(i=>`<div class="lc ${S.sel==="item:"+i?"sel":""}" draggable="true" data-src="item:${i}">${art(card(S.items[i].cid),S.items[i])}</div>`).join("")}</div>`)}}
+}
+
+const A=document.getElementById("app");
+let dt;
+A.addEventListener("dragstart",e=>{const s=e.target.closest("[data-src]");if(s){e.dataTransfer.setData("text/plain",s.dataset.src);e.dataTransfer.effectAllowed="move";s.style.opacity=.5}});
+A.addEventListener("dragend",e=>{if(e.target.style)e.target.style.opacity=1});
+A.addEventListener("dragover",e=>{const t=e.target.closest(".slot,#rm,.th");if(t){e.preventDefault();document.querySelectorAll(".over").forEach(x=>x!==t&&x.classList.remove("over"));t.classList.add("over")}});
+A.addEventListener("dragleave",e=>{const t=e.target.closest(".slot,#rm,.th");t&&t.classList.remove("over")});
+A.addEventListener("drop",e=>{const t=e.target.closest(".slot,#rm,.th");if(!t)return;e.preventDefault();const src=e.dataTransfer.getData("text/plain"),b=B();
+  if(src.startsWith("pgm:")!==t.classList.contains("th"))return;if(t.classList.contains("th")){const[pp]=b.pages.splice(+src.slice(4),1);b.pages.splice(+t.dataset.pgo,0,pp);touch(b)}else if(t.id==="rm")removeSlot(b,src);else place(b,+t.dataset.pi,+t.dataset.pos,src)});
+A.addEventListener("input",e=>{if(e.target.id==="q"){clearTimeout(dt);const v=e.target.value;dt=setTimeout(()=>{S.q=v;render();const q=document.getElementById("q");q.focus();q.setSelectionRange(v.length,v.length)},250)}});
+A.addEventListener("change",e=>{if(e.target.id==="g"){S.game=e.target.value;S.rar="";render()}if(e.target.id==="r"){S.rar=e.target.value;render()}if(e.target.id==="jp"){S.pg=Math.min(B().pages.length,Math.max(1,+e.target.value||1))-1;render()}});
+A.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("[role=button]")){e.preventDefault();e.target.click()}});
+A.addEventListener("click",e=>{
+  const t=e.target,b=B(),$=s=>t.closest(s);
+  let x;
+  if(x=$("[data-info]")){e.preventDefault();info(x.dataset.info,x.dataset.it)}
+  else if(t.id==="cz")customise();
+  else if(x=$("[data-nav]")){S.view=x.dataset.nav;render()}
+  else if(t.id==="th"){S.theme=S.theme==="dark"?"light":"dark";document.documentElement.dataset.theme=S.theme;save()}
+  else if(x=$("[data-open]")){S.bid=x.dataset.open;S.view="binder";S.pg=0;S.ov=false;render()}
+  else if(t.id==="new")newBinder();
+  else if(t.id==="ovb"){S.ov=!S.ov;render()}else if(t.id==="tl"){S.lib=!S.lib;render()}
+  else if(x=$("[data-pgo]")){S.pg=+x.dataset.pgo;S.ov=false;render()}
+  else if(t.id==="pv"){S.pg--;render()}else if(t.id==="nx"){S.pg++;render()}
+  else if(t.id==="ap"){b.pages.push(Array(9).fill(null));S.pg=b.pages.length-1;touch(b)}
+  else if(t.id==="dp"){S.pg++;b.pages.splice(S.pg,0,Array(9).fill(null));touch(b)} // duplicates layout (empty slots), not the physical cards
+  else if(t.id==="xp"){if(b.pages[S.pg].some(Boolean))alert("Only empty pages can be deleted.");else if(b.pages.length>1){b.pages.splice(S.pg,1);S.pg=Math.max(0,S.pg-1);touch(b)}}
+  else if(x=$("[data-f]")){S.filter=x.dataset.f;render()}
+  else if(x=$("[data-del]")){e.preventDefault();const id=x.dataset.del;S.binders.forEach(b=>b.pages.forEach(p=>p.forEach((s,i)=>s===id&&(p[i]=null))));delete S.items[id];save();render()}
+  else if(x=$(".slot")){ // tap-to-place alternative to dragging
+    if(S.sel){place(b,+x.dataset.pi,+x.dataset.pos,S.sel);S.sel=null}
+    else if(x.dataset.src){S.sel=x.dataset.src;render()}
+    else{S.lib=true;render();document.getElementById("q")?.focus()}}
+  else if(x=$(".lc")){const s=x.dataset.src;
+    if(S.view==="library"){x.dataset.src.startsWith("lib:")&&(S.items[uid()]={cid:s.slice(4)},save(),flash(x))}
+    else S.sel=S.sel===s?null:s,render()}
+});
+function flash(x){x.querySelector("small").textContent="Added to collection ✓"}
+function newBinder(){
+  const d=document.getElementById("dlg");
+  d.innerHTML=`<form method="dialog"><h3 style="margin-top:0">New binder</h3><p><label>Name<br><input id="bn" required value="My Binder" style="width:100%"></label></p>
+  <p><label>Category<br><select id="bg" style="width:100%"><option value="one-piece">One Piece</option><option value="pokemon">Pokémon</option><option value="sports">Topps / Sports</option><option value="mixed">Mixed</option></select></label></p>
+  <p><label>Size<br><select disabled style="width:100%"><option>9-pocket (3×3)</option></select></label></p>
+  <p><label>Pages<br><select id="bp" style="width:100%"><option>10</option><option>20</option><option>30</option><option>40</option></select></label></p>
+  <div class="bar" style="justify-content:flex-end"><button value="x">Cancel</button><button class="pri" value="ok">Create</button></div></form>`;
+  d.showModal();
+  d.onclose=()=>{if(d.returnValue!=="ok")return;const g=document.getElementById("bg")?.value;};
+  d.querySelector("form").onsubmit=()=>{const n=d.querySelector("#bn").value.trim()||"Untitled",g=d.querySelector("#bg").value,p=+d.querySelector("#bp").value;
+    const ac={"one-piece":"#c2693f",pokemon:"#4a78b5",sports:"#4d8a5e",mixed:"#7a6aa8"}[g];
+    const nb={id:uid(),name:n,game:g,pages:newPages(p),accent:ac,at:Date.now()};S.binders.push(nb);S.bid=nb.id;S.view="binder";S.pg=0;
+    if(g!=="mixed")S.game=g;save();setTimeout(render)};
+}
+const PRE={Minimal:["#c2693f","#ffffff"],Dark:["#c2693f","#2a2927"],Cream:["#b8864b","#f3ead8"],Black:["#9a9a9a","#111111"],Navy:["#6d8fd6","#16233f"]};
+function customise(){const b=B(),d=document.getElementById("dlg");
+ d.innerHTML=`<h3 style="margin-top:0">Customise binder</h3><p><label>Title<br><input data-c="name" value="${esc(b.name)}" style="width:100%"></label></p>
+ <p>Preset<br><span class="bar" style="justify-content:flex-start">${Object.keys(PRE).map(k=>`<button data-pre="${k}">${k}</button>`).join("")}</span></p>
+ <p><label>Accent <input type="color" data-c="accent" value="${b.accent}"></label> <label>Page <input type="color" data-c="pbg" value="${b.pbg||"#ffffff"}"></label></p>
+ <p>Background image<br><input type="file" accept="image/*" id="bgf"> ${b.bg?`<button data-rmbg>Remove</button>`:""}</p>
+ <p><label>Opacity <input type="range" min="0.1" max="1" step="0.05" data-c="op" value="${b.op??0.5}"></label> <label>Fit <select data-c="fit"><option ${b.fit!=="contain"?"selected":""}>cover</option><option ${b.fit==="contain"?"selected":""}>contain</option></select></label></p>
+ <div class="bar" style="justify-content:flex-end"><button class="pri" data-x>Done</button></div>`;
+ d.onclick=e=>{const ds=e.target.dataset;if(ds.pre){const p=PRE[ds.pre];b.accent=p[0];b.pbg=p[1];touch(b);customise()}else if("rmbg" in ds){imgDel(b.bg);b.bg=null;touch(b);customise()}else if("x" in ds)d.close()};
+ d.oninput=e=>{const k=e.target.dataset.c;if(k){b[k]=k==="op"?+e.target.value:e.target.value;save();render()}};
+ d.onchange=e=>{if(e.target.id==="bgf"&&e.target.files[0])up(e.target.files[0],k=>{imgDel(b.bg);b.bg=k}).then(customise)};
+ d.showModal()}
+function info(cid,iid){const c=card(cid),it=iid&&S.items[iid],d=document.getElementById("dlg"),o=(a,v)=>a.map(x=>`<option ${v===x?"selected":""}>${x}</option>`).join("");
+ d.innerHTML=`<div style="width:220px;margin:0 auto 12px">${art(c,it)}</div><h3 style="margin:0">${esc(c.name)}</h3><p class="mut" style="margin:2px 0 10px">${G[c.game]} · ${esc(c.set)} · ${esc(c.num)} · ${esc(c.rarity)}<br>Owned ×${copies(cid)}</p>`+(it?
+ `<p><label>Status <select data-k="st">${o(["Owned","Wishlist","For Trade","Sold"],it.st||"Owned")}</select></label> <label>Condition <select data-k="cond">${o(["","Mint","Near Mint","Excellent","Good","Played","Damaged","Graded"],it.cond||"")}</select></label></p>
+ <p><input data-k="notes" placeholder="Notes" value="${esc(it.notes||"")}" style="width:100%"></p><p>Custom image (this copy only)<br><input type="file" accept="image/*" id="cif"> ${it.img?`<button data-rmci>Remove</button>`:""}</p>`
+ :`<p><select id="tb" aria-label="Binder">${S.binders.map(b=>`<option value="${b.id}">${esc(b.name)}</option>`).join("")}</select> <button class="pri" data-addb>Add to binder</button> <button data-addc>Add copy to collection</button></p>`)+`<div class="bar" style="justify-content:flex-end"><button data-x>Close</button></div>`;
+ d.onchange=e=>{const t=e.target;if(t.dataset.k){it[t.dataset.k]=t.value;save()}else if(t.id==="cif"&&t.files[0])up(t.files[0],k=>{imgDel(it.img);it.img=k}).then(()=>info(cid,iid))};
+ d.oninput=null;
+ d.onclick=e=>{const ds=e.target.dataset;if("x" in ds)d.close();else if("rmci" in ds){imgDel(it.img);it.img=null;save();render();info(cid,iid)}else if("addc" in ds){S.items[uid()]={cid};save();render();info(cid,iid)}else if("addb" in ds){const b=S.binders.find(x=>x.id===d.querySelector("#tb").value),id=uid();S.items[id]={cid};for(const p of b.pages){const i=p.indexOf(null);if(i>-1){p[i]=id;break}}touch(b);d.close()}};
+ d.showModal()}
+if(S.theme)document.documentElement.dataset.theme=S.theme;
+render();imgInit();
+</script></body></html>
