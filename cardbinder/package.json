@@ -1,0 +1,28 @@
+{
+  "name": "cardbinder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@dnd-kit/core": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "vitest": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/postcss": "latest",
+    "postcss": "latest"
+  }
+}
