@@ -1,0 +1,482 @@
+[
+  {
+    "category": "One Piece",
+    "text": "What are the three ancient weapons of myth, named after gods, sought throughout the series?",
+    "options": [
+      "Zeus, Hades, Poseidon",
+      "Ares, Apollo, Athena",
+      "Pluton, Poseidon, Uranus",
+      "Titan, Kraken, Leviathan"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Straw Hat was the first in the crew to have a bounty surpass 100 million berries?",
+    "options": [
+      "Zoro",
+      "Luffy",
+      "Sanji",
+      "Nami"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What is the name of Zoro's three-sword fighting style?",
+    "options": [
+      "Ittoryu",
+      "Nitoryu",
+      "Kyutoryu",
+      "Santoryu"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Devil Fruit gives Trafalgar Law his room-based powers?",
+    "options": [
+      "Mera Mera no Mi",
+      "Gura Gura no Mi",
+      "Ope Ope no Mi",
+      "Hito Hito no Mi"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What group of nations founded the World Government at the end of the Void Century?",
+    "options": [
+      "The World Nobles Council",
+      "Twenty allied kingdoms",
+      "The Reverie Assembly",
+      "The Grand Alliance"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who is revealed as the captain of the Blackbeard Pirates, notorious for eating two Devil Fruits?",
+    "options": [
+      "Trafalgar Law",
+      "Eustass Kid",
+      "Capone Bege",
+      "Marshall D. Teach"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Devil Fruit does Magellan of Impel Down possess?",
+    "options": [
+      "Mera Mera no Mi",
+      "Suna Suna no Mi",
+      "Doku Doku no Mi",
+      "Yami Yami no Mi"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which admiral wields the Pika Pika no Mi, granting light-based powers?",
+    "options": [
+      "Aokiji",
+      "Kizaru",
+      "Akainu",
+      "Fujitora"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What must Devil Fruit users avoid to prevent losing their strength entirely?",
+    "options": [
+      "Direct sunlight",
+      "Extreme heat",
+      "High altitude",
+      "Seawater or Sea Prism Stone"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What title is Boa Hancock known by as captain of the Kuja Pirates?",
+    "options": [
+      "Snake Princess",
+      "Pirate Empress",
+      "Amazon Queen",
+      "Kuja Warrior"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which arc centers on a summit meeting of the world's kings, called the Levely?",
+    "options": [
+      "Dressrosa",
+      "Whole Cake Island",
+      "Reverie",
+      "Wano"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Luffy's Devil Fruit was eventually revealed to be a Mythical Zoan modeled after which legendary figure?",
+    "options": [
+      "Phoenix",
+      "Nika, the Sun God",
+      "Seiryu the Azure Dragon",
+      "Okuchi no Makami"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who captains the Heart Pirates and allies with the Straw Hats during Dressrosa and Wano?",
+    "options": [
+      "Capone Bege",
+      "X Drake",
+      "Trafalgar Law",
+      "Basil Hawkins"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Sanji's biological family, revealed to be genetically-modified assassins, are known as what?",
+    "options": [
+      "The Charlotte Family",
+      "The Nefertari Family",
+      "The D. Family",
+      "The Vinsmoke Family"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which of these is NOT a power granted by Big Mom's Soru Soru no Mi?",
+    "options": [
+      "Extracting and implanting lifespans",
+      "Bringing objects to life as Homies",
+      "Stopping time entirely",
+      "Splitting her own soul among many beings"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who is the Whitebeard Pirates' 'Fire Fist' commander and Luffy's sworn brother?",
+    "options": [
+      "Sabo",
+      "Portgas D. Ace",
+      "Marco",
+      "Jozu"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Devil Fruit gives Whitebeard his devastating quake-based powers?",
+    "options": [
+      "Yami Yami no Mi",
+      "Mera Mera no Mi",
+      "Gura Gura no Mi",
+      "Hie Hie no Mi"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "After Ace's death, who eventually inherits and eats the Mera Mera no Mi?",
+    "options": [
+      "Luffy",
+      "Sabo",
+      "Marco",
+      "Koala"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What was the ruling regime in Wano Country that the Straw Hat alliance sets out to overthrow?",
+    "options": [
+      "The Kozuki Shogunate",
+      "The Amigasa Village council",
+      "Orochi and Kaido's joint rule",
+      "The Nine Red Scabbards' council"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who becomes the new Shogun of Wano after the events of that arc?",
+    "options": [
+      "Trafalgar Law",
+      "Kin'emon",
+      "Kozuki Momonosuke",
+      "Kaido"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Kaido's Devil Fruit lets him transform into which mythical creature?",
+    "options": [
+      "A phoenix",
+      "An azure dragon",
+      "A giant Buddha",
+      "A nine-tailed fox"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Straw Hat member wields Enma, the black blade once owned by Kozuki Oden?",
+    "options": [
+      "Killer",
+      "Kin'emon",
+      "Roronoa Zoro",
+      "Ashura Doji"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What is the name given to the coalition of crews who secretly allied to take down Kaido in Wano?",
+    "options": [
+      "The Worst Generation",
+      "The Warlords",
+      "The Revolutionary Army",
+      "The Wano Alliance"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which 'Worst Generation' pirate is known for magnetic, metal-manipulating powers?",
+    "options": [
+      "Basil Hawkins",
+      "Eustass Kid",
+      "Urouge",
+      "Capone Bege"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Nico Robin's home island, destroyed in a Buster Call for its forbidden research, is called what?",
+    "options": [
+      "Cocoyasi Village",
+      "Alabasta",
+      "Ohara",
+      "Skypiea"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who leads the Fire Tank Pirates and has a body that functions like a mobile fortress?",
+    "options": [
+      "Jewelry Bonney",
+      "Urouge",
+      "X Drake",
+      "Capone Bege"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What ability does Robin's Hana Hana no Mi grant her?",
+    "options": [
+      "Turning invisible",
+      "Sprouting duplicate body parts from any surface",
+      "Controlling plants",
+      "Manipulating shadows"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Yonko is dethroned by the end of the Wano Country arc?",
+    "options": [
+      "Big Mom",
+      "Blackbeard",
+      "Kaido",
+      "Shanks"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which reclusive scientist is responsible for many of the story's most advanced weapons and SMILE fruits?",
+    "options": [
+      "Caesar Clown",
+      "Judge Vinsmoke",
+      "Queen",
+      "Vegapunk"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which doctor gave his life defending Drum Island and mentored Chopper in spirit?",
+    "options": [
+      "Dr. Kureha",
+      "Dr. Hiluluk",
+      "Dr. Vegapunk",
+      "Dr. Law"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What is Franky's massive robotic battle form called?",
+    "options": [
+      "Gear Fourth",
+      "Radical Beam",
+      "Iron Pirate Franky Shogun",
+      "Coup de Burst"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who is the strongest CP9 agent Luffy fights atop the Tower of Justice at Enies Lobby?",
+    "options": [
+      "Spandam",
+      "Rob Lucci",
+      "Kaku",
+      "Jyabura"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Luffy's father, a leader of the Revolutionary Army, is named what?",
+    "options": [
+      "Sanji",
+      "Chopper",
+      "Monkey D. Dragon",
+      "Brook"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who is Sanji's older sister within the Vinsmoke Family, who secretly aids the Straw Hats?",
+    "options": [
+      "Charlotte Pudding",
+      "Reiju",
+      "Nami",
+      "Vivi"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which Devil Fruit allows Brook's soul to return to his own skeleton after death?",
+    "options": [
+      "Hito Hito no Mi",
+      "Horo Horo no Mi",
+      "Kage Kage no Mi",
+      "Yomi Yomi no Mi"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What is the term for a Devil Fruit user unlocking a dramatically stronger form of their power?",
+    "options": [
+      "Gear Transformation",
+      "Awakening",
+      "Haki Awakening",
+      "Conqueror's Surge"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What are the three recognized types of Haki in the series?",
+    "options": [
+      "Fire, Ice, and Lightning Haki",
+      "Physical, Mental, and Spiritual Haki",
+      "Observation, Armament, and Conqueror's Haki",
+      "Attack, Defense, and Speed Haki"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Which rare Haki can render weaker-willed people unconscious just by being unleashed?",
+    "options": [
+      "Armament Haki",
+      "Conqueror's Haki",
+      "Observation Haki",
+      "Awakened Haki"
+    ],
+    "answer": 1,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "Who leads the Sun Pirates and later joins the Straw Hats after aiding them at Marineford?",
+    "options": [
+      "Arlong",
+      "Hody Jones",
+      "Jinbe",
+      "Fisher Tiger"
+    ],
+    "answer": 2,
+    "deck": "one_piece"
+  },
+  {
+    "category": "One Piece",
+    "text": "What is the name of Shanks' flagship as captain of the Red Hair Pirates?",
+    "options": [
+      "Moby Dick",
+      "Thousand Sunny",
+      "Oro Jackson",
+      "Red Force"
+    ],
+    "answer": 3,
+    "deck": "one_piece"
+  }
+]

@@ -1,0 +1,698 @@
+[
+  {
+    "category": "Abbott Elementary",
+    "text": "In which U.S. city is Abbott Elementary set?",
+    "options": [
+      "Chicago",
+      "Philadelphia",
+      "Baltimore",
+      "Detroit"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What filming style does the show use, with characters addressing an unseen crew?",
+    "options": [
+      "Mockumentary",
+      "Live studio audience",
+      "Animated",
+      "Anthology"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What grade does main character Janine Teagues teach?",
+    "options": [
+      "Kindergarten",
+      "2nd grade",
+      "5th grade",
+      "8th grade"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Who is the school's principal?",
+    "options": [
+      "Barbara Howard",
+      "Ava Coleman",
+      "Melissa Schemmenti",
+      "Janine Teagues"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which veteran teacher is known for her decades of experience and sharp wit?",
+    "options": [
+      "Barbara Howard",
+      "Ava Coleman",
+      "Janine Teagues",
+      "Cheyenne"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Who starts out as a substitute and later becomes a full teacher and Janine's love interest?",
+    "options": [
+      "Jacob Hill",
+      "Gregory Eddie",
+      "Mr. Johnson",
+      "Tariq"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is the school's full fictional name?",
+    "options": [
+      "Willard R. Abbott Elementary",
+      "Franklin D. Roosevelt Elementary",
+      "Liberty Bell Elementary",
+      "Independence Elementary"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which TV network airs Abbott Elementary?",
+    "options": [
+      "NBC",
+      "ABC",
+      "CBS",
+      "FOX"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Who created Abbott Elementary and stars as Janine?",
+    "options": [
+      "Issa Rae",
+      "Quinta Brunson",
+      "Tiffany Haddish",
+      "Yvonne Orji"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which teacher is known for her local connections and always finding a hookup for supplies?",
+    "options": [
+      "Melissa Schemmenti",
+      "Barbara Howard",
+      "Ava Coleman",
+      "Janine Teagues"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What subject does teacher Jacob Hill teach?",
+    "options": [
+      "Art",
+      "History",
+      "Science",
+      "Gym"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What kind of school is Abbott, in terms of funding?",
+    "options": [
+      "Private and well-funded",
+      "An underfunded public school",
+      "A charter school",
+      "A boarding school"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is the overall genre of Abbott Elementary?",
+    "options": [
+      "Drama",
+      "Workplace comedy sitcom",
+      "Reality show",
+      "Crime procedural"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What real-life job inspired creator Quinta Brunson to make the show?",
+    "options": [
+      "Her mother was a teacher",
+      "She was a school nurse",
+      "She was a principal",
+      "She was a substitute teacher"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which recurring character is the school's janitor?",
+    "options": [
+      "Mr. Johnson",
+      "Mr. Morris",
+      "Coach Taylor",
+      "Principal Kane"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Janine's on-and-off boyfriend in the early seasons is named what?",
+    "options": [
+      "Tariq",
+      "Gregory",
+      "Maurice",
+      "Devon"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What choir is Barbara a devoted member of?",
+    "options": [
+      "Her church choir",
+      "The school choir",
+      "A community theater group",
+      "A gospel band"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How do characters typically deliver commentary directly to the audience?",
+    "options": [
+      "Voiceover narration",
+      "Talking-head interviews",
+      "Text captions",
+      "Flashback scenes"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which teacher tends to be laid-back, easygoing, and socially conscious?",
+    "options": [
+      "Jacob Hill",
+      "Barbara Howard",
+      "Ava Coleman",
+      "Melissa Schemmenti"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What district does the fictional school belong to?",
+    "options": [
+      "Philadelphia School District",
+      "Chicago Public Schools",
+      "NYC Department of Education",
+      "LA Unified School District"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What award format has Abbott Elementary been recognized with (as a TV comedy)?",
+    "options": [
+      "Emmy Awards",
+      "Grammy Awards",
+      "Tony Awards",
+      "Oscars"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which teacher is the most tech-savvy and often handles the school's equipment issues?",
+    "options": [
+      "Jacob Hill",
+      "Barbara Howard",
+      "Mr. Johnson",
+      "Melissa Schemmenti"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How does the show typically open each episode?",
+    "options": [
+      "With a musical number",
+      "With a to-camera interview segment",
+      "With a flashback",
+      "With a voicemail message"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is a running theme in the show regarding school resources?",
+    "options": [
+      "The school has unlimited funding",
+      "Teachers often pay out of pocket for supplies",
+      "The school recently got a huge grant",
+      "The school outsources all supplies"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which character is generally the most eager to impress Ava and follow the rules?",
+    "options": [
+      "Janine Teagues",
+      "Barbara Howard",
+      "Melissa Schemmenti",
+      "Gregory Eddie"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does Ava do before becoming principal?",
+    "options": [
+      "Runs the school's social media / AV tasks",
+      "Teaches math",
+      "Works in the cafeteria",
+      "Coaches the football team"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What tone does the show generally take toward the public school system?",
+    "options": [
+      "Purely critical and bleak",
+      "A mix of comedy and heartfelt appreciation for teachers",
+      "Purely satirical of students",
+      "Focused on administration only"
+    ],
+    "answer": 1,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which teacher often clashes gently with Barbara due to differing teaching philosophies?",
+    "options": [
+      "Janine Teagues",
+      "Melissa Schemmenti",
+      "Jacob Hill",
+      "Mr. Johnson"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is Gregory's professional background before becoming a full-time teacher?",
+    "options": [
+      "He was a substitute and former football coach",
+      "He was a lawyer",
+      "He was a chef",
+      "He was a nurse"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What kind of relationship do Barbara and Melissa generally have?",
+    "options": [
+      "Close, long-time work friends",
+      "Bitter rivals",
+      "Strangers",
+      "Distant relatives"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What subject is most associated with Barbara Howard's classroom?",
+    "options": [
+      "Early elementary literacy/reading",
+      "Advanced calculus",
+      "Chemistry",
+      "Foreign languages"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is a common source of comedic conflict between Ava and the teaching staff?",
+    "options": [
+      "Ava's unconventional management style",
+      "Ava never being at the school",
+      "Ava's strict academic standards",
+      "Ava's dislike of children"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How would you best describe the overall tone of Abbott Elementary?",
+    "options": [
+      "A heartfelt workplace mockumentary comedy",
+      "A dark psychological drama",
+      "A crime thriller",
+      "A fantasy adventure"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is one thing the documentary crew's presence is explained by within the show?",
+    "options": [
+      "A local news/documentary project about public schools",
+      "A reality TV competition",
+      "A school security investigation",
+      "A student film project"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which character tends to be the most optimistic about fixing the school's problems?",
+    "options": [
+      "Janine Teagues",
+      "Barbara Howard",
+      "Ava Coleman",
+      "Mr. Johnson"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does the show frequently highlight about teacher pay and resources?",
+    "options": [
+      "Teachers are underpaid and under-resourced",
+      "Teachers are overpaid",
+      "The school has too much funding",
+      "Resources are never an issue"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How does Barbara typically react to Janine's more idealistic ideas?",
+    "options": [
+      "With gentle skepticism, drawing on her experience",
+      "With immediate enthusiastic agreement",
+      "With outright hostility",
+      "She ignores Janine entirely"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What personality trait is Melissa Schemmenti best known for besides her connections?",
+    "options": [
+      "A tough, streetwise, no-nonsense attitude",
+      "Extreme shyness",
+      "Being the strictest disciplinarian",
+      "Never speaking to other staff"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is Gregory Eddie's demeanor generally like compared to Janine's?",
+    "options": [
+      "More reserved and by-the-book",
+      "Wildly chaotic",
+      "Loud and boisterous",
+      "Completely indifferent"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does Ava often prioritize over strict academic administration?",
+    "options": [
+      "Her own image and social media presence",
+      "Standardized test scores",
+      "Rigorous curriculum design",
+      "Teacher union negotiations"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What kind of comedic device does the show frequently use involving classroom moments?",
+    "options": [
+      "Cutting to a teacher's candid camera reaction",
+      "Musical interludes",
+      "Animated flashbacks",
+      "Slow-motion action scenes"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which character often serves as the show's moral or emotional anchor for the ensemble?",
+    "options": [
+      "Barbara Howard",
+      "Ava Coleman",
+      "Mr. Johnson",
+      "Tariq"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What best describes the students' portrayal on the show?",
+    "options": [
+      "Diverse, lively kids central to the school's daily life",
+      "Rarely shown at all",
+      "Portrayed as uniformly troubled",
+      "Mostly background extras with no personality"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is a common storyline theme involving school supplies or funding drives?",
+    "options": [
+      "Teachers organizing fundraisers or spending their own money",
+      "The school having excess unused funding",
+      "Corporate sponsorships solving all problems",
+      "Students bringing unlimited supplies from home"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How is the relationship between Janine and Gregory generally described early on?",
+    "options": [
+      "A slow-building will-they-won't-they dynamic",
+      "Openly hostile from episode one",
+      "Siblings",
+      "Longtime married couple"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does the show suggest about Ava's qualifications as principal at first?",
+    "options": [
+      "She got the position through unconventional means, not typical merit",
+      "She has a doctorate in education",
+      "She was a career superintendent",
+      "She was a former teacher of the year"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What overall message does the show often convey about teachers?",
+    "options": [
+      "Teachers go above and beyond despite systemic challenges",
+      "Teachers are mostly disengaged from their jobs",
+      "Teaching is portrayed as an easy job",
+      "Teachers rarely care about their students"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "Which staff member is often seen as the calm, seasoned voice of reason in staff conflicts?",
+    "options": [
+      "Barbara Howard",
+      "Ava Coleman",
+      "Jacob Hill",
+      "Gregory Eddie"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What kind of tone does the mockumentary format allow for regarding character honesty?",
+    "options": [
+      "Characters can be candid in their to-camera confessions",
+      "Characters can never break from a formal tone",
+      "Characters only communicate through narration",
+      "Characters never address the camera"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How does the show typically resolve most weekly conflicts?",
+    "options": [
+      "Through heartfelt, low-key resolutions rather than dramatic twists",
+      "With courtroom trials",
+      "With physical confrontations",
+      "With magical interventions"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does Melissa often use her extensive local connections for?",
+    "options": [
+      "Getting discounted or free supplies and favors for the school",
+      "Undermining other teachers",
+      "Avoiding all school responsibilities",
+      "Running a side business at school"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What is Jacob's attitude typically like toward social and cultural issues?",
+    "options": [
+      "Very socially conscious and vocal about them",
+      "Completely indifferent",
+      "Openly dismissive of such topics",
+      "Avoidant of any discussion"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How does the show generally portray the school's physical building/facilities?",
+    "options": [
+      "Aging and in need of repair",
+      "Brand new and state-of-the-art",
+      "Recently fully renovated",
+      "Extremely luxurious"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does Barbara often emphasize as most important in teaching young children?",
+    "options": [
+      "Patience, structure, and foundational literacy skills",
+      "Only standardized test prep",
+      "Strict punishment for mistakes",
+      "Avoiding personal connection with students"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What role does Mr. Johnson play beyond being the janitor in terms of his presence on the show?",
+    "options": [
+      "A quirky recurring character with his own subplots",
+      "The school's academic advisor",
+      "The assistant principal",
+      "A substitute teacher"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What does the show suggest is a key source of the teachers' resilience?",
+    "options": [
+      "Their genuine care for their students and each other",
+      "Extremely high salaries",
+      "Minimal workload",
+      "Strong corporate sponsorship"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "How would you describe Ava's growth as a character over the course of the show?",
+    "options": [
+      "She gradually shows more competence and heart as principal",
+      "She remains entirely unchanged",
+      "She quits the school early on",
+      "She becomes a teacher instead"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  },
+  {
+    "category": "Abbott Elementary",
+    "text": "What best sums up the show's central setting and premise?",
+    "options": [
+      "Dedicated teachers navigating daily life at an underfunded public school",
+      "A private boarding school drama",
+      "A college campus comedy",
+      "A homeschooling documentary"
+    ],
+    "answer": 0,
+    "deck": "abbott"
+  }
+]

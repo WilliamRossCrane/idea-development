@@ -1,0 +1,301 @@
+general|Geography|Which capital sits on both banks of the Danube and was formed by joining Buda and Pest?|Budapest|Vienna|Prague|Bratislava
+general|Geography|Which sea separates Saudi Arabia from northeast Africa?|Red Sea|Arabian Sea|Caspian Sea|Black Sea
+general|Geography|Which country is home to the ancient city of Petra?|Jordan|Egypt|Türkiye|Lebanon
+general|Geography|Which European country has the region of Transylvania?|Romania|Hungary|Bulgaria|Serbia
+general|Geography|Which country has the city of Dubrovnik?|Croatia|Montenegro|Greece|Italy
+general|Geography|Which island is shared by Haiti and the Dominican Republic?|Hispaniola|Jamaica|Cuba|Puerto Rico
+general|Geography|Which strait separates Spain from Morocco?|Strait of Gibraltar|Bosporus|Strait of Hormuz|Bering Strait
+general|Geography|Which country contains the city of Marrakech?|Morocco|Algeria|Tunisia|Egypt
+general|Geography|Which capital is located closest to the equator?|Quito|Lima|Bogotá|Caracas
+general|Geography|Which river flows through Paris?|Seine|Rhine|Loire|Thames
+general|Geography|Which country has the largest land area in South America?|Brazil|Argentina|Peru|Colombia
+general|Geography|Which African country was formerly known as Abyssinia?|Ethiopia|Eritrea|Sudan|Somalia
+general|Geography|Which country is home to Angkor Wat?|Cambodia|Laos|Thailand|Vietnam
+general|Geography|What is the largest island in the Mediterranean Sea?|Sicily|Sardinia|Cyprus|Crete
+general|Geography|Which US state contains the city of Portland famous for its bridges and roses?|Oregon|Maine|Washington|Idaho
+general|History|Which conflict ended with the Treaty of Versailles in 1919?|World War I|World War II|Crimean War|Napoleonic Wars
+general|History|Which empire built Machu Picchu?|Inca|Aztec|Maya|Olmec
+general|History|Who was the first woman to fly solo across the Atlantic Ocean?|Amelia Earhart|Bessie Coleman|Valentina Tereshkova|Harriet Quimby
+general|History|In which decade did the Chernobyl disaster occur?|1980s|1970s|1990s|1960s
+general|History|Which country was ruled by the Tokugawa shogunate?|Japan|China|Korea|Vietnam
+general|History|Which explorer's expedition completed the first circumnavigation of Earth?|Ferdinand Magellan|Christopher Columbus|James Cook|Vasco da Gama
+general|History|Which ancient civilisation used cuneiform writing?|Sumerians|Incas|Romans|Vikings
+general|History|Which city hosted the first modern Olympic Games in 1896?|Athens|Paris|London|Rome
+general|History|What year did the Apollo 11 Moon landing take place?|1969|1965|1972|1979
+general|History|Which wall divided a German city until 1989?|Berlin Wall|Hadrian's Wall|Western Wall|Great Wall
+general|History|Which country was the first to grant women the vote in national elections?|New Zealand|Australia|Finland|United Kingdom
+general|History|Who was known as the Maid of Orléans?|Joan of Arc|Catherine de' Medici|Marie Antoinette|Eleanor of Aquitaine
+general|History|What was the name of the ship on which Charles Darwin sailed?|HMS Beagle|HMS Endeavour|HMS Victory|HMS Bounty
+general|History|Which revolution began with the storming of the Bastille?|French Revolution|American Revolution|Russian Revolution|Industrial Revolution
+general|Science|What is the chemical symbol for potassium?|K|P|Pt|Po
+general|Science|What is the unit of electrical resistance?|Ohm|Volt|Ampere|Watt
+general|Science|Which planet has the moon Titan?|Saturn|Jupiter|Neptune|Mars
+general|Science|What is the most abundant gas in Earth's atmosphere?|Nitrogen|Oxygen|Argon|Carbon dioxide
+general|Science|Which part of a cell contains most of its genetic material?|Nucleus|Ribosome|Mitochondrion|Golgi apparatus
+general|Science|What is the approximate pH of a neutral solution at room temperature?|7|3|10|14
+general|Science|Which blood type is the universal donor for red blood cells?|O negative|O positive|AB positive|A negative
+general|Science|What causes the tides most directly?|The Moon's gravity|Earth's magnetic field|Wind|The Sun's heat
+general|Science|What does DNA stand for?|Deoxyribonucleic acid|Dinitrogen acid|Double nucleic atom|Dynamic nucleic acid
+general|Science|Which element has atomic number 6?|Carbon|Oxygen|Hydrogen|Silicon
+general|Science|What is the name for a solid changing directly into a gas?|Sublimation|Condensation|Deposition|Evaporation
+general|Science|Which telescope launched in 2021 observes primarily in infrared?|James Webb Space Telescope|Hubble Space Telescope|Kepler Space Telescope|Chandra X-ray Observatory
+general|Science|What kind of animal is an axolotl?|Salamander|Lizard|Fish|Frog
+general|Science|Which vitamin can the body make when skin is exposed to sunlight?|Vitamin D|Vitamin C|Vitamin B12|Vitamin K
+general|Science|What is the boundary of a black hole called?|Event horizon|Ozone layer|Accretion disk|Magnetosphere
+general|Movies & TV|Which film features the fictional restaurant Big Kahuna Burger?|Pulp Fiction|Goodfellas|The Big Lebowski|Fight Club
+general|Movies & TV|Which 2001 film introduced the character Shrek?|Shrek|Monsters, Inc.|Ice Age|Finding Nemo
+general|Movies & TV|Who directed The Grand Budapest Hotel?|Wes Anderson|Sofia Coppola|Greta Gerwig|David Fincher
+general|Movies & TV|Which sitcom features the coffee shop Central Perk?|Friends|Seinfeld|How I Met Your Mother|New Girl
+general|Movies & TV|In The Matrix, which colour pill does Neo choose?|Red|Blue|Green|Yellow
+general|Movies & TV|Who played Jack Sparrow in Pirates of the Caribbean?|Johnny Depp|Orlando Bloom|Geoffrey Rush|Jude Law
+general|Movies & TV|Which HBO drama is set largely in the fictional continents of Westeros and Essos?|Game of Thrones|The Last of Us|Succession|Westworld
+general|Movies & TV|Which film won Best Picture at the Oscars for 2020 films, awarded in 2021?|Nomadland|Parasite|CODA|The Shape of Water
+general|Movies & TV|Which director made Spirited Away?|Hayao Miyazaki|Makoto Shinkai|Isao Takahata|Satoshi Kon
+general|Movies & TV|What is the name of the paper company in the US version of The Office?|Dunder Mifflin|Wernham Hogg|Sabre Systems|Sterling Cooper
+general|Movies & TV|Which TV series follows chemist Walter White?|Breaking Bad|Better Call Saul|Ozark|Dexter
+general|Movies & TV|Which film has a character named Elle Woods?|Legally Blonde|Mean Girls|Clueless|The Princess Diaries
+general|Movies & TV|Which Christopher Nolan film follows a team entering dreams?|Inception|Interstellar|Memento|Tenet
+general|Movies & TV|In The Lord of the Rings films, who plays Gandalf?|Ian McKellen|Christopher Lee|Patrick Stewart|Hugo Weaving
+general|Movies & TV|Which 1995 Pixar film was its first feature-length release?|Toy Story|A Bug's Life|Monsters, Inc.|Finding Nemo
+general|Music|Which band released the album Rumours?|Fleetwood Mac|ABBA|Eagles|Bee Gees
+general|Music|Which singer released the album 21?|Adele|Amy Winehouse|Duffy|Florence Welch
+general|Music|Which artist recorded the hit Umbrella with Jay-Z?|Rihanna|Beyoncé|Alicia Keys|Katy Perry
+general|Music|Which band released the 2004 album American Idiot?|Green Day|Blink-182|Fall Out Boy|My Chemical Romance
+general|Music|Which Australian artist recorded the album Fever in 2001?|Kylie Minogue|Sia|Natalie Imbruglia|Delta Goodrem
+general|Music|Which band released Mr. Brightside?|The Killers|The Strokes|Arctic Monkeys|Kings of Leon
+general|Music|Which artist released the album 1989?|Taylor Swift|Lorde|Dua Lipa|Olivia Rodrigo
+general|Music|Which 1990s band released Wonderwall?|Oasis|Blur|Radiohead|Pulp
+general|Music|What is the stage name of Abel Tesfaye?|The Weeknd|Post Malone|Frank Ocean|Childish Gambino
+general|Music|Which duo made the electronic album Discovery?|Daft Punk|Justice|The Chemical Brothers|Disclosure
+general|Music|Which rapper's debut album was The College Dropout?|Kanye West|Drake|J. Cole|Kendrick Lamar
+general|Music|Which singer had the 2014 hit Chandelier?|Sia|Lorde|Ellie Goulding|Tove Lo
+general|Music|Who released the album Back to Black?|Amy Winehouse|Adele|Duffy|Lily Allen
+general|Music|Which band fronted by Hayley Williams released Misery Business?|Paramore|Evanescence|The Pretty Reckless|Tonight Alive
+general|Music|Which instrument is the saxophone family classified as?|Woodwind|Brass|String|Percussion
+general|Sport|How many points is a try worth in rugby union?|5|4|6|7
+general|Sport|Which sport uses the terms birdie and eagle?|Golf|Tennis|Cricket|Badminton
+general|Sport|Which country hosted the 2016 Summer Olympics?|Brazil|Japan|United Kingdom|China
+general|Sport|How many legal balls are in a standard cricket over?|6|5|8|10
+general|Sport|Which trophy is awarded to the winner of the AFL Grand Final?|Premiership cup|Bledisloe Cup|Ashes urn|Webb Ellis Cup
+general|Sport|In Formula 1, what colour flag indicates the race must stop?|Red|Yellow|Black|Green
+general|Sport|Which tennis Grand Slam is played on clay?|French Open|Wimbledon|Australian Open|US Open
+general|Sport|Which NBA team did Michael Jordan win six championships with?|Chicago Bulls|Los Angeles Lakers|Boston Celtics|Miami Heat
+general|Sport|How many players from one side are on court in netball?|7|5|6|8
+general|Sport|What is a perfect score in ten-pin bowling?|300|200|250|360
+general|Sport|Which country won the men's FIFA World Cup in 2010?|Spain|Netherlands|Germany|Brazil
+general|Sport|What is the maximum break in standard snooker without a free ball?|147|155|150|120
+general|Sport|In baseball, how many strikes result in a strikeout?|3|2|4|5
+general|Sport|Which Australian city hosted the 2000 Summer Olympics?|Sydney|Melbourne|Brisbane|Perth
+general|Sport|Which racing event traditionally awards a green jacket to its winner?|The Masters|The Open Championship|Kentucky Derby|Tour de France
+general|Food & Drink|What spirit is traditionally used in a mojito?|Rum|Gin|Vodka|Tequila
+general|Food & Drink|What is the primary ingredient in hummus?|Chickpeas|Lentils|White beans|Peas
+general|Food & Drink|Which cheese is traditionally used in a Greek salad?|Feta|Halloumi|Mozzarella|Parmesan
+general|Food & Drink|What is the Italian term for pasta cooked firm to the bite?|Al dente|Al forno|Al fresco|Al salto
+general|Food & Drink|What fruit is dried to make a prune?|Plum|Apricot|Peach|Fig
+general|Food & Drink|What is the main flavour in a classic espresso martini?|Coffee|Chocolate|Vanilla|Orange
+general|Food & Drink|Which grain is traditionally used to make risotto?|Rice|Barley|Couscous|Quinoa
+general|Food & Drink|Which country is known as the birthplace of the dish paella?|Spain|Portugal|Italy|Greece
+general|Food & Drink|What is the Japanese name for a broth-based noodle dish?|Ramen|Tempura|Onigiri|Gyoza
+general|Food & Drink|Which ingredient gives a traditional pesto its green colour?|Basil|Parsley|Mint|Spinach
+general|Food & Drink|What is the name for thinly sliced raw fish served without rice?|Sashimi|Nigiri|Maki|Temaki
+general|Food & Drink|Which nut is used in marzipan?|Almond|Walnut|Hazelnut|Cashew
+general|Food & Drink|What type of pastry is used for a classic éclair?|Choux|Puff|Shortcrust|Filo
+general|Food & Drink|What does the culinary term julienne describe?|Cutting into thin strips|Slow cooking in liquid|Charring over flame|Whisking into foam
+general|Food & Drink|Which cocktail mixes tequila, lime and orange liqueur?|Margarita|Mojito|Negroni|Daiquiri
+general|90s & 2000s|Which console introduced Wii Sports to millions of households?|Nintendo Wii|GameCube|PlayStation 2|Xbox 360
+general|90s & 2000s|Which social networking site was famous for its Top 8 friends?|Myspace|Friendster|Bebo|Orkut
+general|90s & 2000s|What was the first Pokémon in the original Pokédex?|Bulbasaur|Pikachu|Charmander|Squirtle
+general|90s & 2000s|Which 1997 virtual pet toy needed feeding and cleaning?|Tamagotchi|Furby|Bop It|Game Boy
+general|90s & 2000s|Which game series features the city of Vice City?|Grand Theft Auto|Saints Row|Watch Dogs|Driver
+general|90s & 2000s|What was the name of Microsoft's instant messenger that shut down in 2013?|MSN Messenger|ICQ|AIM|Skype
+general|90s & 2000s|Which singer starred as Hannah Montana?|Miley Cyrus|Selena Gomez|Demi Lovato|Hilary Duff
+general|90s & 2000s|Which animated series is set in the town of Bikini Bottom?|SpongeBob SquarePants|Fairly OddParents|Adventure Time|Phineas and Ferb
+general|90s & 2000s|Which handheld Nintendo console had two screens, one of them touch-sensitive?|Nintendo DS|Game Boy Color|PSP|Nintendo Switch Lite
+general|90s & 2000s|What website's early videos were often described as going viral?|YouTube|Wikipedia|eBay|Tumblr
+general|90s & 2000s|Which game introduced Master Chief?|Halo: Combat Evolved|Doom|Call of Duty|Mass Effect
+general|90s & 2000s|What was the name of the green dinosaur in the Mario games?|Yoshi|Birdo|Bowser|Koopa
+general|Tech & Games|What does GPS stand for?|Global Positioning System|General Positioning Service|Geographic Program Signal|Global Path Satellite
+general|Tech & Games|What does a browser's private or incognito window primarily avoid saving locally?|Browsing history|Your IP address|Your internet service provider's logs|Your website account activity
+general|Tech & Games|Which company developed the PlayStation consoles?|Sony|Nintendo|Microsoft|Sega
+general|Tech & Games|In Minecraft, which material is required to make a Nether portal frame?|Obsidian|Bedrock|Deepslate|Blackstone
+general|Tech & Games|What is the common name for an unwanted email sent in bulk?|Spam|Cache|Cookie|Ping
+general|Tech & Games|Which game features the fictional island of Hyrule?|The Legend of Zelda|Final Fantasy|Animal Crossing|Pokémon
+general|Tech & Games|Which programming language shares its name with a snake?|Python|Ruby|Swift|Go
+general|Tech & Games|What is the standard file extension for a JPEG image?|.jpg|.png|.svg|.gif
+general|Tech & Games|What does USB stand for?|Universal Serial Bus|Unified Storage Bank|User Service Bridge|Universal Software Base
+general|Tech & Games|Which company originally created the Android operating system before Google acquired it?|Android Inc.|Nokia|Palm|BlackBerry
+general|Tech & Games|In chess, which piece can move only diagonally?|Bishop|Rook|Knight|Queen
+general|Tech & Games|What does a QR code hold when used to open a webpage?|A web address|A battery charge|An internet connection|A website's source code
+general|Tech & Games|Which video game features the character Kratos?|God of War|Assassin's Creed|Uncharted|Destiny
+general|Tech & Games|Which console succeeded the PlayStation 3?|PlayStation 4|PlayStation Vita|PlayStation 5|PSP
+general|Tech & Games|In a computer, what does RAM stand for?|Random Access Memory|Read Access Module|Rapid Active Memory|Remote Archive Machine
+one_piece|One Piece|Which crew member joins the Straw Hats as their musician?|Brook|Franky|Jinbe|Chopper
+one_piece|One Piece|What is the name of the first ship of the Straw Hat Pirates?|Going Merry|Thousand Sunny|Red Force|Oro Jackson
+one_piece|One Piece|Which island is the site of Ace's execution?|Marineford|Enies Lobby|Sabaody|Impel Down
+one_piece|One Piece|Who taught Luffy the fundamentals of Haki during the time skip?|Silvers Rayleigh|Shanks|Garp|Jinbe
+one_piece|One Piece|Who is the archaeologist of the Straw Hat crew?|Nico Robin|Nami|Vivi|Carrot
+one_piece|One Piece|What are the stones that record the Void Century's history called?|Poneglyphs|Vivre Cards|Eternal Poses|Dials
+one_piece|One Piece|Which emperor is also known as Charlotte Linlin?|Big Mom|Boa Hancock|Jewelry Bonney|Black Maria
+one_piece|One Piece|Which Straw Hat has the bounty hunter epithet Pirate Hunter?|Roronoa Zoro|Sanji|Usopp|Franky
+one_piece|One Piece|What is the name of Luffy's grandfather in the Marines?|Monkey D. Garp|Sengoku|Smoker|Koby
+one_piece|One Piece|What island is famous for its giant ancient trees and floating bubbles?|Sabaody Archipelago|Skypiea|Little Garden|Fish-Man Island
+abbott|Abbott Elementary|Which school district is Abbott Elementary set in?|Philadelphia|New York City|Chicago|Baltimore
+abbott|Abbott Elementary|What subject does Jacob Hill teach at Abbott?|History|Mathematics|Music|Science
+abbott|Abbott Elementary|Which character is Abbott's long-serving kindergarten teacher?|Barbara Howard|Janine Teagues|Melissa Schemmenti|Ava Coleman
+abbott|Abbott Elementary|Who is the custodian at Abbott who often knows more than the teachers?|Mr. Johnson|Tariq|Zach|O'Shon
+abbott|Abbott Elementary|What is Janine Teagues's job at the school?|Teacher|Principal|Custodian|School nurse
+abbott|Abbott Elementary|Which teacher is famous for her Philly connections and tough exterior?|Melissa Schemmenti|Barbara Howard|Janine Teagues|Ashley Garcia
+abbott|Abbott Elementary|Which character is the principal of Abbott at the beginning of the show?|Ava Coleman|Barbara Howard|Janine Teagues|Melissa Schemmenti
+abbott|Abbott Elementary|Who is Janine's on-and-off boyfriend early in the series?|Tariq|Gregory|Jacob|Mr. Johnson
+abbott|Abbott Elementary|Which actor plays Gregory Eddie?|Tyler James Williams|Chris Perfetti|William Stanford Davis|Zack Fox
+abbott|Abbott Elementary|Which actor created and stars in Abbott Elementary?|Quinta Brunson|Janelle James|Sheryl Lee Ralph|Lisa Ann Walter
+superstore|Superstore|Which fictional retail chain is the show's main setting?|Cloud 9|Big Buy|Value Mart|Mega Mart
+superstore|Superstore|Who is the store manager at the start of the series?|Glenn Sturgis|Dina Fox|Amy Sosa|Jeff Sutin
+superstore|Superstore|Which employee is known for making announcements over the PA?|Garrett McNeill|Jonah Simms|Mateo Liwanag|Marcus White
+superstore|Superstore|Who plays Amy Sosa?|America Ferrera|Lauren Ash|Nico Santos|Nichole Sakura
+superstore|Superstore|Which character is often referred to by the nickname Bo?|Bo Thompson|Jonah Simms|Marcus White|Jeff Sutin
+superstore|Superstore|What natural disaster damages the store at the end of season two?|Tornado|Earthquake|Flood|Wildfire
+superstore|Superstore|Which employee is known for her intense devotion to store security?|Dina Fox|Cheyenne Lee|Sandra Kaluiokalani|Amy Sosa
+superstore|Superstore|Who is Cheyenne's husband?|Bo Thompson|Jonah Simms|Mateo Liwanag|Garrett McNeill
+superstore|Superstore|Which character joins Cloud 9 as a new employee in the pilot episode?|Jonah Simms|Jeff Sutin|Marcus White|Sandra Kaluiokalani
+superstore|Superstore|What is the name of Cloud 9's mascot?|Kyle the Cloud|Clyde the Cloud|Cloudy Carl|Nate the Nimbus
+general|Geography|Which country uses the yen as its currency?|Japan|South Korea|China|Thailand
+general|Geography|Which country has the region of Bavaria?|Germany|Austria|Switzerland|Belgium
+general|Geography|Which mountain range runs along the western edge of South America?|Andes|Alps|Rockies|Himalayas
+general|Geography|What is the capital of Vietnam?|Hanoi|Ho Chi Minh City|Da Nang|Hue
+general|Geography|Which country contains the island of Bali?|Indonesia|Malaysia|Philippines|Thailand
+general|Geography|Which ocean lies off the west coast of Australia?|Indian Ocean|Pacific Ocean|Southern Ocean|Atlantic Ocean
+general|Geography|Which Australian state is home to the Barossa Valley?|South Australia|Victoria|New South Wales|Western Australia
+general|Geography|What is the capital of Iceland?|Reykjavík|Oslo|Helsinki|Copenhagen
+general|Geography|In which country is the city of Cusco?|Peru|Chile|Bolivia|Ecuador
+general|Geography|Which country has the most volcanoes on the island of Java?|Indonesia|Japan|Philippines|New Zealand
+general|Geography|What is the capital city of Argentina?|Buenos Aires|Santiago|Montevideo|Lima
+general|Geography|Which river flows through London?|Thames|Seine|Danube|Rhine
+general|Geography|Which country has the cities Auckland and Wellington?|New Zealand|Australia|Canada|Ireland
+general|Geography|Which country shares a land border with both Spain and Germany?|France|Belgium|Portugal|Austria
+general|Geography|Which US state includes the island of Maui?|Hawaii|California|Alaska|Florida
+general|History|Which ancient Roman city was buried by Mount Vesuvius in 79 CE?|Pompeii|Athens|Carthage|Sparta
+general|History|Which queen reigned over Britain for most of the 19th century?|Victoria|Elizabeth I|Anne|Mary II
+general|History|What was the name of the first artificial satellite launched into orbit?|Sputnik 1|Explorer 1|Vostok 1|Voyager 1
+general|History|Which empire controlled Constantinople before its conquest by the Ottomans?|Byzantine Empire|Roman Republic|Mongol Empire|Persian Empire
+general|History|Which US president signed the Emancipation Proclamation?|Abraham Lincoln|George Washington|Theodore Roosevelt|Thomas Jefferson
+general|History|Which year saw the fall of the Soviet Union?|1991|1985|1989|1995
+general|History|Which ancient empire had a road network connecting Rome to much of Europe?|Roman Empire|Mongol Empire|Inca Empire|Achaemenid Empire
+general|History|Which decade saw the first iPhone released?|2000s|1990s|2010s|1980s
+general|History|Which Australian prime minister disappeared while swimming in 1967?|Harold Holt|Robert Menzies|John Gorton|Gough Whitlam
+general|History|Which ship sank on its maiden voyage in 1912?|Titanic|Lusitania|Bismarck|Britannic
+general|History|Which ancient Greek city-state was famous for its militaristic society?|Sparta|Athens|Corinth|Thebes
+general|History|Which empire was ruled by Suleiman the Magnificent?|Ottoman Empire|Mughal Empire|Roman Empire|Byzantine Empire
+general|History|What is the name of the policy that removed many Aboriginal and Torres Strait Islander children from their families in Australia?|Stolen Generations|White Australia policy|Federation|Assimilation Act
+general|History|What event in 1788 marked the start of British colonisation in New South Wales?|Arrival of the First Fleet|Eureka Stockade|Federation|Gold rush
+general|History|Which Egyptian queen was an ally of Julius Caesar and Mark Antony?|Cleopatra VII|Nefertiti|Hatshepsut|Arsinoe II
+general|Science|What is the primary function of red blood cells?|Carry oxygen|Fight infection|Clot blood|Digest food
+general|Science|Which scientist proposed three laws of motion?|Isaac Newton|Albert Einstein|Galileo Galilei|Nikola Tesla
+general|Science|What is the largest planet in our Solar System?|Jupiter|Saturn|Neptune|Earth
+general|Science|What is the term for animals active mainly at night?|Nocturnal|Diurnal|Crepuscular|Migratory
+general|Science|Which organ produces insulin?|Pancreas|Liver|Kidney|Thyroid
+general|Science|What type of rock forms when magma cools and solidifies?|Igneous|Sedimentary|Metamorphic|Limestone
+general|Science|Which scale measures earthquake magnitude based on seismic moment?|Moment magnitude scale|Beaufort scale|Mohs scale|Celsius scale
+general|Science|Which molecule transports oxygen in the blood?|Haemoglobin|Keratin|Collagen|Insulin
+general|Science|Which organelle is the site of photosynthesis in plant cells?|Chloroplast|Mitochondrion|Nucleus|Lysosome
+general|Science|What kind of bond holds the hydrogen and oxygen atoms together within a water molecule?|Covalent|Ionic|Metallic|Hydrogen
+general|Science|How many chromosomes are normally present in a human body cell?|46|23|44|48
+general|Science|What does the C in the chemical formula CO2 represent?|Carbon|Calcium|Chlorine|Copper
+general|Science|Which layer of the atmosphere contains most weather?|Troposphere|Stratosphere|Mesosphere|Thermosphere
+general|Science|Which scientist discovered penicillin in 1928?|Alexander Fleming|Louis Pasteur|Marie Curie|Gregor Mendel
+general|Science|Which metal is liquid at room temperature?|Mercury|Aluminium|Iron|Copper
+general|Movies & TV|Which actor played Barbie in the 2023 film?|Margot Robbie|Emma Stone|Florence Pugh|Saoirse Ronan
+general|Movies & TV|Which film features the line 'You can't handle the truth!'?|A Few Good Men|The Departed|The Godfather|Top Gun
+general|Movies & TV|Which actor played the lead role in the 2000 film Gladiator?|Russell Crowe|Joaquin Phoenix|Gerard Butler|Hugh Jackman
+general|Movies & TV|Which series is set in the fictional town of Hawkins, Indiana?|Stranger Things|Riverdale|Dark|Yellowjackets
+general|Movies & TV|What is the name of the spaceship in Alien?|Nostromo|Enterprise|Serenity|Discovery One
+general|Movies & TV|Who directed Titanic and Avatar?|James Cameron|Peter Jackson|Steven Spielberg|Ridley Scott
+general|Movies & TV|What is the name of the dragon voiced by Eddie Murphy in Shrek?|Donkey|Puss in Boots|Lord Farquaad|Gingy
+general|Movies & TV|Which show follows the Roy family and their media empire?|Succession|Billions|The Crown|Industry
+general|Movies & TV|Which actor plays Hermione Granger in the Harry Potter films?|Emma Watson|Emma Stone|Daisy Ridley|Millie Bobby Brown
+general|Movies & TV|Which comedy film features the character Regina George?|Mean Girls|Easy A|Clueless|Bring It On
+general|Movies & TV|Which 2019 film won Best Picture at the Academy Awards held in 2020?|Parasite|1917|Joker|Once Upon a Time in Hollywood
+general|Movies & TV|Which actor voices Woody in the Toy Story films?|Tom Hanks|Tim Allen|Billy Crystal|John Goodman
+general|Movies & TV|Which TV show follows a chemistry teacher turned methamphetamine producer?|Breaking Bad|The Wire|The Sopranos|The Shield
+general|Movies & TV|Which actress plays Wednesday Addams in the 2022 Netflix series?|Jenna Ortega|Emma Myers|Christina Ricci|Aubrey Plaza
+general|Movies & TV|Which film features the fictional high school Rydell High?|Grease|Hairspray|High School Musical|Footloose
+general|Music|Which British band released the album OK Computer?|Radiohead|Oasis|Coldplay|Muse
+general|Music|Which artist is known for the song Bad Romance?|Lady Gaga|Katy Perry|Rihanna|Pink
+general|Music|Which singer recorded Rolling in the Deep?|Adele|Sia|Florence Welch|Lorde
+general|Music|Which band released the album Nevermind?|Nirvana|Pearl Jam|Soundgarden|Alice in Chains
+general|Music|Which singer had a hit with the song Blinding Lights?|The Weeknd|Bruno Mars|Drake|Harry Styles
+general|Music|Which band released the song Bohemian Rhapsody?|Queen|Led Zeppelin|Pink Floyd|The Beatles
+general|Music|Which artist released the 2016 album Lemonade?|Beyoncé|Rihanna|Solange|Alicia Keys
+general|Music|Which band released the hit song Somebody That I Used to Know?|Gotye featuring Kimbra|The xx|MGMT|Empire of the Sun
+general|Music|Which musician is known for the album Purple Rain?|Prince|Michael Jackson|Stevie Wonder|David Bowie
+general|Music|Which singer performs As It Was?|Harry Styles|Ed Sheeran|Shawn Mendes|Niall Horan
+general|Music|Which band released the song Seven Nation Army?|The White Stripes|The Strokes|The Black Keys|The Killers
+general|Music|Which rapper released the album To Pimp a Butterfly?|Kendrick Lamar|J. Cole|Drake|Tyler, the Creator
+general|Music|Which Australian band released the album Currents?|Tame Impala|King Gizzard & the Lizard Wizard|The Temper Trap|Empire of the Sun
+general|Music|Which singer was the frontman of the band Nirvana?|Kurt Cobain|Dave Grohl|Eddie Vedder|Chris Cornell
+general|Music|Which song by Outkast includes the repeated refrain 'shake it like a Polaroid picture'?|Hey Ya!|Ms. Jackson|Roses|The Way You Move
+general|Sport|What colour is the leader's jersey in the Tour de France?|Yellow|Green|Red|White
+general|Sport|Which sport is associated with the Davis Cup?|Tennis|Cricket|Rugby union|Golf
+general|Sport|How many holes are played in a standard round of golf?|18|9|12|21
+general|Sport|Which Olympic sport uses a foil, épée or sabre?|Fencing|Archery|Modern pentathlon|Judo
+general|Sport|How many minutes are in a regulation NBA basketball game?|48|40|60|45
+general|Sport|Which Australian rugby league team is nicknamed the Broncos?|Brisbane Broncos|North Queensland Cowboys|Gold Coast Titans|Dolphins
+general|Sport|Which sport has a position called wicketkeeper?|Cricket|Baseball|Field hockey|Rugby
+general|Sport|Which sport includes the pommel horse apparatus?|Artistic gymnastics|Diving|Weightlifting|Athletics
+general|Sport|In soccer, what is a hat-trick?|Three goals by one player|Three assists in a match|Three penalty saves|Three yellow cards
+general|Sport|What is the highest possible score with one dart in standard darts?|60|50|20|100
+general|Sport|Which team won the 2018 men's FIFA World Cup?|France|Croatia|Belgium|England
+general|Sport|In rugby league, how many tackles does a team normally have before handing over possession?|Six|Four|Five|Eight
+general|Sport|Which water sport uses a board attached to a sail?|Windsurfing|Wakeboarding|Kitesurfing|Paddleboarding
+general|Sport|What is the name of the annual rugby union series between Australia and New Zealand?|Bledisloe Cup|State of Origin|Ashes|Calcutta Cup
+general|Sport|Which US state hosts the Indianapolis 500?|Indiana|Iowa|Ohio|Illinois
+general|Food & Drink|Which sauce is traditionally made from egg yolks and butter and served with eggs Benedict?|Hollandaise|Béchamel|Velouté|Aioli
+general|Food & Drink|Which herb is the main ingredient in tabbouleh?|Parsley|Coriander|Basil|Mint
+general|Food & Drink|What is the base spirit in a classic gin and tonic?|Gin|Vodka|Rum|Whisky
+general|Food & Drink|Which Italian dessert traditionally includes coffee-soaked ladyfingers?|Tiramisu|Panna cotta|Cannoli|Gelato
+general|Food & Drink|What is the main ingredient in a Spanish tortilla?|Egg|Flour|Rice|Corn
+general|Food & Drink|Which legume is used to make traditional falafel?|Chickpeas|Kidney beans|Soybeans|Peas
+general|Food & Drink|What does the word 'sushi' primarily refer to?|Vinegared rice|Raw fish|Seaweed|Soy sauce
+general|Food & Drink|What is the name of the French vegetable dish made famous by a Pixar film?|Ratatouille|Bouillabaisse|Cassoulet|Gratin dauphinois
+general|Food & Drink|Which plant provides the beans used to make chocolate?|Cacao tree|Coffee plant|Carob tree|Vanilla orchid
+general|Food & Drink|What is a flat white usually made with?|Espresso and steamed milk|Drip coffee and cold milk|Espresso and whipped cream|Tea and foamed milk
+general|Food & Drink|Which dish traditionally uses arborio rice?|Risotto|Paella|Biryani|Pilaf
+general|Food & Drink|What ingredient is fermented to make sauerkraut?|Cabbage|Cucumber|Turnip|Radish
+general|Food & Drink|Which spice gives curry powder much of its yellow colour?|Turmeric|Cumin|Coriander|Fenugreek
+general|Food & Drink|Which type of bread is traditionally baked in a tandoor?|Naan|Baguette|Ciabatta|Sourdough
+general|Food & Drink|What is the main ingredient in tahini?|Sesame seeds|Peanuts|Almonds|Sunflower seeds
+general|90s & 2000s|Which console was Nintendo's first to use optical discs?|GameCube|Nintendo 64|Wii|Nintendo DS
+general|90s & 2000s|Which cartoon features Ash Ketchum and Pikachu?|Pokémon|Digimon|Yu-Gi-Oh!|Beyblade
+general|90s & 2000s|Which toy line featured collectible creatures stored inside little balls and battled in an arena?|Bakugan|Bionicle|Mighty Beanz|Tamagotchi
+general|90s & 2000s|Which 2000s series stars Raven Baxter, who has psychic visions?|That's So Raven|Lizzie McGuire|The Suite Life of Zack & Cody|Hannah Montana
+general|90s & 2000s|Which chat program was known for 'nudges' and custom status messages?|MSN Messenger|Slack|Discord|Telegram
+general|90s & 2000s|Which Sony handheld console launched in 2004 in Japan?|PlayStation Portable|PlayStation Vita|Game Boy Advance|Nintendo DS
+general|90s & 2000s|Which green ogre became a movie star in 2001?|Shrek|Hulk|Grinch|Mike Wazowski
+general|90s & 2000s|Which PlayStation game series stars adventurer Nathan Drake?|Uncharted|Tomb Raider|Assassin's Creed|The Last of Us
+general|90s & 2000s|Which game franchise features Dr. Eggman as a villain?|Sonic the Hedgehog|Super Mario|Crash Bandicoot|Mega Man
+general|90s & 2000s|What was the name of the portable music player Apple introduced in 2001?|iPod|iPad|Walkman|Zune
+general|90s & 2000s|Which cartoon stars the secret agent Perry the Platypus?|Phineas and Ferb|Kim Possible|Gravity Falls|Recess
+general|90s & 2000s|Which toy became a global craze in the late 1990s and spoke a fictional language?|Furby|Tamagotchi|Bop It|Bratz
+general|90s & 2000s|Which game features the fictional city of Liberty City?|Grand Theft Auto|Need for Speed|Tony Hawk's Pro Skater|Burnout
+general|90s & 2000s|Which sitcom centres on the fictional Springfield family?|The Simpsons|Family Guy|King of the Hill|Futurama
+general|90s & 2000s|Which handheld game console launched alongside Tetris in North America?|Game Boy|Game Gear|Nintendo DS|PSP
+general|Tech & Games|Which video game series features the city Raccoon City?|Resident Evil|Silent Hill|The Last of Us|Dead Space
+general|Tech & Games|What does HTML stand for?|HyperText Markup Language|High Transfer Machine Language|Hyperlink Text Mode Language|Home Tool Markup Language
+general|Tech & Games|Which company made the original Xbox?|Microsoft|Sony|Nintendo|Sega
+general|Tech & Games|In which game do players harvest resources and survive a battle royale on a shrinking island?|Fortnite|Minecraft|Stardew Valley|Portal
+general|Tech & Games|What does VPN stand for?|Virtual Private Network|Visual Public Network|Verified Proxy Node|Virtual Protocol Name
+general|Tech & Games|Which fictional Italian plumber first appeared in Donkey Kong as Jumpman?|Mario|Luigi|Wario|Yoshi
+general|Tech & Games|Which game studio made The Last of Us?|Naughty Dog|Insomniac Games|Santa Monica Studio|Bungie
+general|Tech & Games|Which company developed the Windows operating system?|Microsoft|IBM|Apple|Google
+general|Tech & Games|What is the term for malicious software that demands payment to unlock files?|Ransomware|Adware|Spyware|Firmware
+general|Tech & Games|Which game features the character Lara Croft?|Tomb Raider|Uncharted|Assassin's Creed|Horizon Zero Dawn
+general|Tech & Games|Which unit is larger?|Terabyte|Gigabyte|Megabyte|Kilobyte
+general|Tech & Games|What name is given to a network's unique numeric address such as 192.168.1.1?|IP address|MAC address|DNS record|URL
+general|Tech & Games|Which Nintendo franchise features Isabelle and Tom Nook?|Animal Crossing|Splatoon|Fire Emblem|Pokémon
+general|Tech & Games|What does URL stand for?|Uniform Resource Locator|Universal Routing Link|Unified Resource Language|User Reference Location
+general|Tech & Games|Which game series stars Geralt of Rivia?|The Witcher|Dragon Age|Elden Ring|Fable
+one_piece|One Piece|Which crew member is known as the Knight of the Sea?|Jinbe|Brook|Franky|Sanji
+abbott|Abbott Elementary|Which actor plays the school's custodian Mr. Johnson?|William Stanford Davis|Chris Perfetti|Tyler James Williams|Zack Fox
+superstore|Superstore|Which actor plays Jonah Simms?|Ben Feldman|Mark McKinney|Colton Dunn|Nico Santos
+superstore|Superstore|Which actor plays Dina Fox?|Lauren Ash|America Ferrera|Nichole Sakura|Kaliko Kauahi
+abbott|Abbott Elementary|Which actor plays principal Ava Coleman?|Janelle James|Quinta Brunson|Sheryl Lee Ralph|Lisa Ann Walter
