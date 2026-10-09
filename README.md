@@ -15,3 +15,8 @@ Open the project folder you want to work on and follow its README.
 | Digital Technologies Library | [digital-technologies-library](digital-technologies-library/) | Initial project README |
 
 There is no shared install command. Run each app from its own folder.
+
+- [Local development](docs/development.md)
+- [Deploying individual apps](docs/deployment.md)
+- [Migration history and sources](docs/migration.md)
+- [Migration verification](docs/verification.md)
