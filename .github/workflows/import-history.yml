@@ -1,0 +1,36 @@
+name: Import prepared project history
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-history.yml']
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Restore prepared repository and original commits
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .migration/part-* > "$RUNNER_TEMP/migration.bundle"
+          test "$(sha256sum "$RUNNER_TEMP/migration.bundle" | cut -d ' ' -f 1)" = bd47f76f05c2c965fc85b8e5dec5b57fcd5f473c9c34f40bd4f3d7c945f18830
+          git bundle verify "$RUNNER_TEMP/migration.bundle"
+          git fetch "$RUNNER_TEMP/migration.bundle" main:refs/remotes/migration/main
+          imported=$(git rev-parse refs/remotes/migration/main)
+          test "$imported" = f6037f5818f2506786e889ba800d1ca92b966a5f
+          bootstrap=$(git rev-parse HEAD)
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          published=$(git commit-tree "$imported^{tree}" -p "$imported" -p "$bootstrap" -m 'chore: publish projects with preserved original history')
+          git push origin "$published:refs/heads/main"
+          git fetch origin main
+          test "$(git rev-parse origin/main)" = "$published"
+          git fsck --full
+          echo 'Published all six project folders and their prepared Git history.'
