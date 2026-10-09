@@ -1,0 +1,23 @@
+# Local dependencies and generated output
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+
+# Local credentials and deployment settings
+.env
+.env.*
+!.env.example
+!.env.*.example
+.vercel/
+
+# Local editor, OS and log files
+.DS_Store
+Thumbs.db
+*.log
+.idea/
