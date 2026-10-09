@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chef Quest — Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-badge">🍳</div>
+          <div>
+            <div class="brand-name">Chef Quest</div>
+            <div class="brand-sub">COOK · SAVE · LEVEL UP</div>
+          </div>
+        </div>
+
+        <nav class="navlist" id="navlist">
+          <button data-screen="dashboard" class="active">
+            <span class="ic">⌂</span><span class="lbl">Dashboard</span>
+          </button>
+          <button data-screen="saved">
+            <span class="ic">★</span><span class="lbl">Saved Recipes</span>
+          </button>
+          <button data-screen="scanner">
+            <span class="ic">▣</span><span class="lbl">Cupboard Scanner</span>
+          </button>
+          <button data-screen="mealplan">
+            <span class="ic">▦</span><span class="lbl">Meal Plan</span>
+          </button>
+          <button data-screen="shopping">
+            <span class="ic">🛒</span><span class="lbl">Shopping List</span>
+          </button>
+          <button data-screen="detail">
+            <span class="ic">▤</span><span class="lbl">Recipe Detail</span>
+          </button>
+          <button data-screen="profile">
+            <span class="ic">☺</span><span class="lbl">Profile</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="quest-card">
+            <div class="qtitle">CURRENT QUEST</div>
+            <div class="qname">Home Chef · Lvl 3</div>
+            <div class="xpbar"><div class="xpbar-fill"></div></div>
+            <div class="xp-label">640 / 1000 XP to Lvl 4</div>
+          </div>
+          <button class="logout-btn" onclick="resetDemo()">↺ Reset demo</button>
+        </div>
+      </aside>
+
+      <!-- MAIN -->
+      <div class="main">
+        <div class="topbar">
+          <div class="search">
+            🔍
+            <input
+              type="text"
+              id="topSearch"
+              placeholder="Search recipes, ingredients..."
+            />
+          </div>
+          <div class="top-actions">
+            <div class="icon-btn">🔔<span class="dot"></span></div>
+            <div class="icon-btn">💬</div>
+            <button class="user-pill" onclick="goTo('profile')">
+              <div class="avatar" id="topAvatar">M</div>
+              <div>
+                <div class="uname" id="topName">Mary Morales</div>
+                <div class="utag">VIP MEMBER</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- ============ DASHBOARD ============ -->
+        <section class="screen active" data-screen="dashboard">
+          <div class="welcome-row">
+            <div class="welcome-card">
+              <h2 id="dashGreeting">Welcome back, Mary 👋</h2>
+              <p>
+                You've saved 3 new recipes this week and kept your grocery spend
+                12% under budget. Nice work.
+              </p>
+              <button class="cta-btn" onclick="goTo('scanner')">
+                Scan your cupboard →
+              </button>
+            </div>
+            <div class="streak-card">
+              <div class="big">6 day</div>
+              <div class="label">cooking streak</div>
+              <div class="streak-icons">
+                <span>M</span><span>T</span><span>W</span><span>T</span
+                ><span>F</span><span class="off">S</span
+                ><span class="off">S</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-summary" aria-live="polite">
+            <div class="dashboard-stat"><span class="stat-icon">▦</span><div><b id="dashPlanned">0</b><span>meals planned</span></div></div>
+            <div class="dashboard-stat"><span class="stat-icon">🛒</span><div><b id="dashShopping">0</b><span>items to buy</span></div></div>
+            <div class="dashboard-stat"><span class="stat-icon">$</span><div><b id="dashCost">$0.00</b><span>estimated demo cost</span></div></div>
+            <div class="dashboard-stat"><span class="stat-icon">★</span><div><b id="dashSaved">0</b><span>saved recipes</span></div></div>
+          </div>
+
+          <div class="dashboard-feature-grid">
+            <div class="panel tonight-panel">
+              <div class="panel-head"><h3 id="tonightHeading">Tonight's meal</h3><span class="dashboard-day" id="tonightDay"></span></div>
+              <div id="tonightContent"></div>
+            </div>
+            <div class="panel dashboard-shopping-panel">
+              <div class="panel-head"><h3>Shopping snapshot</h3><button class="text-link" onclick="goTo('shopping')">View Shopping List →</button></div>
+              <div class="shopping-snapshot" id="dashboardShopping"></div>
+            </div>
+          </div>
+
+          <div class="panel recommendations-panel">
+            <div class="panel-head"><div><h3>Recipes you might like</h3><p class="panel-subtitle">Simple suggestions based on your profile and current plan.</p></div><button class="text-link" onclick="goTo('saved')">Browse all →</button></div>
+            <div class="dashboard-recommendations" id="dashboardRecommendations"></div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-head"><h3>Your Recent Recipes</h3></div>
+              <table class="recipe-log" id="recentTable"></table>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Deals near you</h3>
+                <div class="tab-pills">
+                  <button class="tab-pill">Best deal</button>
+                  <button class="tab-pill active">For you</button>
+                  <button class="tab-pill">Near you</button>
+                </div>
+              </div>
+              <div class="deal-grid">
+                <div class="deal-card">
+                  <div class="store-tag ww">Woolworths</div>
+                  <div class="swatch">🍚</div>
+                  <div class="dname">White Sugar 1kg</div>
+                  <div class="dprice">$1.75</div>
+                </div>
+                <div class="deal-card">
+                  <div class="store-tag cs">Coles</div>
+                  <div class="swatch">🍝</div>
+                  <div class="dname">Barilla Penne 500g</div>
+                  <div class="dprice">$2.90</div>
+                </div>
+                <div class="deal-card">
+                  <div class="store-tag ww">Woolworths</div>
+                  <div class="swatch">🥛</div>
+                  <div class="dname">Condensed Milk</div>
+                  <div class="dprice">$2.00</div>
+                </div>
+                <div class="deal-card">
+                  <div class="store-tag cs">Coles</div>
+                  <div class="swatch">🌾</div>
+                  <div class="dname">Plain Flour 1kg</div>
+                  <div class="dprice">$1.60</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SAVED RECIPES ============ -->
+        <section class="screen" data-screen="saved">
+          <div class="section-title">
+            <div>
+              <h2>Saved Recipes</h2>
+              <p>
+                Your favourites, plus fresh ideas built from what's already in
+                your kitchen.
+              </p>
+            </div>
+          </div>
+
+          <div class="filter-row" id="filterRow">
+            <label class="filter-select-wrap">Category
+              <select id="categoryFilter" aria-label="Filter recipes by category">
+                <option value="all">All categories</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Snack">Snack</option>
+                <option value="Dessert">Dessert</option>
+              </select>
+            </label>
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="dairy-free">Dairy-free</button>
+            <button class="chip" data-filter="nut-free">Nut-free</button>
+            <button class="chip" data-filter="gluten-free">Gluten-free</button>
+            <button class="chip" data-filter="under30">Under 30 min</button>
+            <button class="chip" data-filter="vegetarian">Vegetarian</button>
+          </div>
+          <p class="allergy-note">Dietary tags describe the recipe as written. Always check packaged ingredient labels for allergy information.</p>
+          <div class="filter-hint" id="filterHint" style="display: none"></div>
+
+          <div class="recipe-list" id="recipeList"></div>
+          <div class="empty-note" id="emptyNote" style="display: none">
+            No saved recipes match this filter yet.
+          </div>
+
+          <div class="section-title">
+            <div>
+              <h2 style="font-size: 17px">Something new for you to try</h2>
+              <p>Matched against ingredients you already have.</p>
+            </div>
+          </div>
+          <div class="suggest-list" id="suggestList"></div>
+          <div class="empty-note" id="suggestEmpty" style="display: none">No recipe suggestions match your search and filters.</div>
+        </section>
+
+        <!-- ============ SCANNER ============ -->
+        <section class="screen" data-screen="scanner">
+          <div class="section-title">
+            <div>
+              <h2>Cupboard Scanner</h2>
+              <p>
+                Snap a photo of your pantry shelf — Chef Quest finds what you
+                can cook right now.
+              </p>
+            </div>
+            <span class="badge-soon">🚧 Coming soon</span>
+          </div>
+
+          <div class="soon-banner">
+            <span class="soon-ic">📷</span>
+            <div>
+              <b>This feature is on our roadmap.</b> Real ingredient recognition
+              needs a camera + image-recognition model connected on the backend,
+              which is beyond this school prototype. The preview below shows
+              exactly how it will work once that's built — try it out.
+            </div>
+          </div>
+
+          <div class="scanner-wrap">
+            <div class="scan-zone">
+              <div class="scan-frame" id="scanFrame">
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+                <div class="scan-line" id="scanLine"></div>
+                <div class="hint" id="scanHint">
+                  Open your cupboard and scan with a clear photo showing the
+                  ingredients clearly.
+                </div>
+              </div>
+              <button class="scan-btn" id="scanBtn" onclick="runScan()">
+                ▶ Scan here · demo preview
+              </button>
+              <div class="scan-note">
+                Demo scan — this simulates what a live camera would detect from
+                a real pantry photo.
+              </div>
+              <div class="scan-steps">
+                <div><b>1</b><span>Take or upload a cupboard photo</span></div>
+                <div><b>2</b><span>Ingredients are identified</span></div>
+                <div><b>3</b><span>Chef Quest suggests recipes</span></div>
+              </div>
+            </div>
+
+            <div class="result-panel">
+              <div class="result-empty" id="resultEmpty">
+                <div class="ic">🔎</div>
+                No scan yet. Tap <b>&nbsp;Scan here · demo preview&nbsp;</b> to see
+                what Chef Quest will be able to find.
+              </div>
+              <div class="result-body" id="resultBody">
+                <div class="panel-head"><h3>Detected in your cupboard</h3></div>
+                <div class="detected-chip-row">
+                  <div class="detected-chip">
+                    <span class="swatch-sm">✓</span>Spaghetti pasta
+                  </div>
+                  <div class="detected-chip">
+                    <span class="swatch-sm">✓</span>Tomato passata
+                  </div>
+                  <div class="detected-chip">
+                    <span class="swatch-sm">✓</span>Garlic
+                  </div>
+                  <div class="detected-chip">
+                    <span class="swatch-sm">✓</span>Dried oregano
+                  </div>
+                </div>
+                <div class="match-card">
+                  <div class="mtag">BEST MATCH · 92%</div>
+                  <h3>Spaghetti Bolognese</h3>
+                  <p>
+                    Add mince for extra protein and you're set — everything else
+                    is already on your shelf.
+                  </p>
+                  <button class="cta-btn gold" onclick="openRecipe('spag-bol')">
+                    View recipe →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ MEAL PLAN ============ -->
+        <section class="screen" data-screen="mealplan">
+          <div class="section-title">
+            <div>
+              <h2>Weekly Meal Plan</h2>
+              <p>
+                Allergy-safe meals for the week, matched to your saved recipes
+                and pantry.
+              </p>
+            </div>
+          </div>
+
+          <div class="allergy-legend">
+            <span>🥜 = contains nuts</span>
+            <span>🥛 = contains dairy</span>
+            <span>🌾 = contains gluten</span>
+          </div>
+
+          <div class="filter-row" id="allergyFilterRow">
+            <button class="chip active" data-allergy="all">All meals</button>
+            <button class="chip" data-allergy="nut-free">Nut-free only</button>
+            <button class="chip" data-allergy="dairy-free">
+              Dairy-free only
+            </button>
+            <button class="chip" data-allergy="gluten-free">
+              Gluten-free only
+            </button>
+          </div>
+          <div
+            class="filter-hint"
+            id="mealplanHint"
+            style="display: none"
+          ></div>
+
+          <div class="meal-summary" id="mealSummary" aria-live="polite">
+            <div><span class="summary-value" id="plannedCount">0</span><span class="summary-label">meals planned</span></div>
+            <div><span class="summary-value" id="emptyCount">7</span><span class="summary-label">days empty</span></div>
+            <div><span class="summary-value" id="cookTime">0 min</span><span class="summary-label">cooking time</span></div>
+            <div><span class="summary-value" id="buyCount">0</span><span class="summary-label">ingredients to buy</span></div>
+            <div><span class="summary-value" id="mealCost">$0.00</span><span class="summary-label">estimated demo cost</span></div>
+            <button class="summary-link" onclick="goTo('shopping')">View shopping list →</button>
+          </div>
+
+          <div class="week-grid" id="weekGrid"></div>
+        </section>
+
+        <!-- ============ SHOPPING LIST ============ -->
+        <section class="screen" data-screen="shopping">
+          <div class="section-title">
+            <div>
+              <h2>Weekly Shopping List</h2>
+              <p>Automatically built from the recipes in your weekly meal plan.</p>
+            </div>
+            <span class="badge-soon">Demo prices</span>
+          </div>
+          <div class="shopping-summary" id="shoppingSummary" aria-live="polite">
+            <div><span class="summary-value" id="shoppingNeedCount">0</span><span class="summary-label">to buy</span></div>
+            <div><span class="summary-value" id="shoppingHaveCount">0</span><span class="summary-label">already have</span></div>
+            <div><span class="summary-value" id="shoppingTotal">$0.00</span><span class="summary-label">estimated demo cost</span></div>
+          </div>
+          <div class="shopping-note">Prototype estimate using demo pricing. Actual store prices may vary.</div>
+          <div id="shoppingEmpty" class="shopping-empty" style="display:none">
+            <div class="empty-icon">🛒</div>
+            <h3>Your shopping list is empty</h3>
+            <p>Add meals to your weekly plan and Chef Quest will build your list automatically.</p>
+            <button class="cta-btn" onclick="goTo('mealplan')">Go to Meal Plan</button>
+          </div>
+          <div id="shoppingContent">
+            <div class="shopping-section">
+              <div class="shopping-section-head"><h3>Need to buy</h3><span id="needSectionCount">0 items</span></div>
+              <div class="shopping-list" id="needToBuyList"></div>
+            </div>
+            <div class="shopping-section">
+              <div class="shopping-section-head"><h3>Already have</h3><span id="haveSectionCount">0 items</span></div>
+              <div class="shopping-list" id="alreadyHaveList"></div>
+            </div>
+            <div class="all-owned" id="allOwned" style="display:none">Everything needed for your planned meals is marked <b>Already have</b>.</div>
+          </div>
+        </section>
+
+        <!-- ============ RECIPE DETAIL ============ -->
+        <section class="screen" data-screen="detail">
+          <button class="back-link" onclick="goTo('saved')">
+            ← Back to Saved Recipes
+          </button>
+
+          <div class="recipe-detail">
+            <div>
+              <div class="rd-photo" id="rdPhoto">🍫</div>
+              <h1 class="rd-title" id="rdTitle">Chocolate Biscuit Balls</h1>
+              <button
+                class="save-recipe-btn"
+                id="rdSaveBtn"
+                onclick="toggleRecipeSave(currentRecipeId, event)"
+              >
+                ☆ Save recipe
+              </button>
+              <button class="plan-recipe-btn" id="rdPlanBtn" onclick="openPlanAddDialog(currentRecipeId)">＋ Add to meal plan</button>
+              <div class="rd-meta-row" id="rdMeta"></div>
+              <p class="rd-desc" id="rdDesc"></p>
+
+              <h3 class="rd-sub">Ingredients</h3>
+              <p
+                style="
+                  font-size: 12px;
+                  color: var(--muted);
+                  margin: -4px 0 12px;
+                "
+              >
+                Tick anything you already have — the price panel updates as you
+                go.
+              </p>
+              <ul class="ing-list" id="ingList"></ul>
+
+              <h3 class="rd-sub">Dietary requirements</h3>
+              <div class="diet-row" id="dietRow">
+                <button class="diet-chip" data-diet="Vegan">Vegan</button>
+                <button class="diet-chip" data-diet="Dairy-free">
+                  Dairy-free
+                </button>
+                <button class="diet-chip" data-diet="Gluten-free">
+                  Gluten-free
+                </button>
+              </div>
+              <div class="diet-note" id="dietNote"></div>
+
+              <h3 class="rd-sub" style="margin-top: 18px">Method</h3>
+              <ol class="steps" id="stepsList"></ol>
+            </div>
+
+            <div class="price-panel">
+              <h3>Price comparison</h3>
+              <div class="ppsub">
+                Ingredients near you · Ormeau QLD 4208 · use ◀ ▶ to compare
+                stores
+              </div>
+              <div class="ppnote">
+                🚧 Coming soon: this will pull live prices from store APIs.
+                Prices shown now are realistic demo data.
+              </div>
+              <div id="priceItems"></div>
+              <div class="price-total">
+                <span>Estimated cost</span><span id="priceTotal">$4.50</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ PROFILE ============ -->
+        <section class="screen" data-screen="profile">
+          <div class="section-title">
+            <div>
+              <h2>Your Profile</h2>
+              <p>
+                Chef Quest uses this to filter recipes and meal plans that are
+                safe for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-wrap">
+            <div class="profile-card">
+              <div class="avatar-lg" id="profAvatar">M</div>
+              <div class="member-tag">VIP MEMBER</div>
+              <div class="field">
+                <label>Full name</label>
+                <input type="text" id="profName" value="Mary Morales" />
+              </div>
+              <div class="field">
+                <label>Suburb / postcode</label>
+                <input type="text" id="profLocation" value="Ormeau QLD 4208" />
+              </div>
+            </div>
+
+            <div class="profile-panel">
+              <h3>Allergies &amp; dietary needs</h3>
+              <div class="psub">
+                These become your default filter on Saved Recipes and Meal Plan.
+              </div>
+              <div class="filter-row" id="profileAllergyRow">
+                <button class="chip" data-diet="nut-free">Nut allergy</button>
+                <button class="chip" data-diet="dairy-free">Dairy-free</button>
+                <button class="chip" data-diet="gluten-free">
+                  Gluten-free
+                </button>
+                <button class="chip" data-diet="vegetarian">Vegetarian</button>
+              </div>
+
+              <div class="save-row">
+                <button
+                  class="cta-btn"
+                  style="background: var(--brown)"
+                  onclick="saveProfile()"
+                >
+                  Save profile
+                </button>
+                <span class="save-msg" id="saveMsg"
+                  >Profile saved ✓ filters updated</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="picker-overlay" id="mealPicker" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+      <div class="picker-dialog">
+        <div class="picker-head"><div><h2 id="pickerTitle">Choose a meal for <span id="pickerDay">Monday</span></h2><p>Safe recipes are shown first based on your profile.</p></div><button class="picker-close" onclick="closeMealPicker()" aria-label="Close recipe picker">×</button></div>
+        <input class="picker-search" id="pickerSearch" type="search" placeholder="Search recipes..." />
+        <label class="unsafe-toggle"><input type="checkbox" id="unsafePickerToggle" /> Show recipes that do not match my settings</label>
+        <div class="picker-list" id="mealPickerList"></div>
+      </div>
+    </div>
+
+    <div class="picker-overlay" id="planAddDialog" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="planAddTitle">
+      <div class="picker-dialog plan-add-dialog">
+        <div class="picker-head"><div><h2 id="planAddTitle">Add recipe to your week</h2><p id="planAddRecipeName">Choose a day for this recipe.</p></div><button class="picker-close" onclick="closePlanAddDialog()" aria-label="Close add to meal plan dialog">×</button></div>
+        <label class="plan-day-label" for="planAddDay">Day</label>
+        <select class="plan-day-select" id="planAddDay"></select>
+        <button class="cta-btn" onclick="addRecipeToPlan()">Add to meal plan</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
