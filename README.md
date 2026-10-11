@@ -12,7 +12,8 @@ Projects are intentionally independent, with their own folders, code and setup. 
 | --- | --- | --- |
 | PokéOS | [pokeos](pokeos/) | Pokémon-inspired app concepts and planning |
 | Chef Quest | [chef-quest](chef-quest/) | Recipes, meal planning and cooking tools |
-| Party Games / Trivia Night | [party-games](party-games/) | Experimental multiplayer party games, trivia, phone controllers and TV screens |
+| Party Games | [party-games](party-games/) | Multiplayer party-game experiments, phone controllers and TV screens |
+| Trivia Night | [trivia-night](trivia-night/) | Standalone live trivia prototype with hosting, questions and Chromecast-friendly screens |
 | CardBinder | [cardbinder](cardbinder/) | Digital trading-card collections and binder layouts |
 | AI Learning Platform | [ai-learning-platform](ai-learning-platform/) | Exploring AI-assisted learning tools |
 | Digital Technologies Library | [digital-technologies-library](digital-technologies-library/) | Experiments with digital teaching resources |

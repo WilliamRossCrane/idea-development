@@ -1,0 +1,698 @@
+[
+  {
+    "category": "Superstore",
+    "text": "What is the name of the big-box store where the show is set?",
+    "options": [
+      "Cloud 9",
+      "Mega Mart",
+      "Value Barn",
+      "Star Market"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "In which U.S. city is the Superstore store located?",
+    "options": [
+      "St. Louis, Missouri",
+      "Chicago, Illinois",
+      "Phoenix, Arizona",
+      "Dallas, Texas"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Who is the store manager for most of the series?",
+    "options": [
+      "Glenn Sturgis",
+      "Jonah Simms",
+      "Garrett",
+      "Jeff Sutin"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which two employees are the central will-they-won't-they couple?",
+    "options": [
+      "Amy and Jonah",
+      "Dina and Garrett",
+      "Cheyenne and Bo",
+      "Mateo and Jeff"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Who is the tough, rule-following floor supervisor?",
+    "options": [
+      "Dina Fox",
+      "Amy Sosa",
+      "Cheyenne",
+      "Sandra"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which character starts the series as a new floor associate?",
+    "options": [
+      "Jonah Simms",
+      "Glenn Sturgis",
+      "Garrett",
+      "Mateo"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Who is the teenage employee often caught up in mischief with her friends?",
+    "options": [
+      "Cheyenne",
+      "Dina",
+      "Sandra",
+      "Amy"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which employee is known for making sarcastic PA announcements?",
+    "options": [
+      "Garrett",
+      "Mateo",
+      "Glenn",
+      "Jeff"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "A major later-season storyline follows the employees trying to form what?",
+    "options": [
+      "A union",
+      "A book club",
+      "A softball team",
+      "A carpool"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which employee's storyline centers on being an undocumented immigrant?",
+    "options": [
+      "Mateo",
+      "Garrett",
+      "Jonah",
+      "Glenn"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "A later season of Superstore depicts the store during what real-world event?",
+    "options": [
+      "The COVID-19 pandemic",
+      "A hurricane season",
+      "A recession",
+      "A store fire"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What genre best describes Superstore?",
+    "options": [
+      "Workplace mockumentary-style sitcom",
+      "Legal drama",
+      "Crime procedural",
+      "Reality competition"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which network originally aired Superstore?",
+    "options": [
+      "NBC",
+      "ABC",
+      "CBS",
+      "The CW"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What kind of real-world stores is Cloud 9 modeled after?",
+    "options": [
+      "Big-box superstores like Walmart or Target",
+      "Small boutique shops",
+      "Online-only retailers",
+      "Department stores like Macy's"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Who is the corporate representative who frequently visits the store?",
+    "options": [
+      "Jeff Sutin",
+      "Glenn Sturgis",
+      "Dina Fox",
+      "Marcus"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Who is the father of Cheyenne's baby?",
+    "options": [
+      "Bo",
+      "Mateo",
+      "Garrett",
+      "Marcus"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "By later seasons, what role does Jonah eventually rise to?",
+    "options": [
+      "Assistant manager",
+      "Regional director",
+      "Janitor",
+      "Corporate CEO"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is Amy's job at the very start of the series?",
+    "options": [
+      "Floor supervisor",
+      "Store manager",
+      "Corporate liaison",
+      "Cashier trainee"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which character is known for being upbeat, chatty, and eager to please?",
+    "options": [
+      "Sandra",
+      "Dina",
+      "Glenn",
+      "Marcus"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What retail category does Cloud 9 sell across?",
+    "options": [
+      "General merchandise (groceries, electronics, clothing, etc.)",
+      "Only electronics",
+      "Only groceries",
+      "Only clothing"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What show format does Superstore use for occasional character asides?",
+    "options": [
+      "Talking-head interview style, mockumentary-influenced",
+      "Musical numbers",
+      "Animated cutaways",
+      "Silent film style"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a recurring theme in the show about corporate retail work?",
+    "options": [
+      "Employees are always well compensated",
+      "Understaffing and difficult corporate policies affect workers",
+      "The store never struggles financially",
+      "Corporate always listens to employee concerns"
+    ],
+    "answer": 1,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which employee is characterized as extremely by-the-book and eager but often overlooked?",
+    "options": [
+      "Sandra",
+      "Dina",
+      "Cheyenne",
+      "Marcus"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What kind of storyline does the show explore around a workplace disaster/crisis?",
+    "options": [
+      "A tornado hitting the store",
+      "A stock market crash",
+      "A store relocation",
+      "A corporate merger only"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which character is known for being blunt, intense, and enforcing strict store rules?",
+    "options": [
+      "Dina Fox",
+      "Cheyenne",
+      "Sandra",
+      "Garrett"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is Jonah's general personality trait when he starts at the store?",
+    "options": [
+      "Idealistic and a bit condescending about working retail",
+      "Extremely shy and silent",
+      "Aggressive and confrontational",
+      "Uninterested in everyone"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which employee often provides deadpan commentary via the store's speaker system?",
+    "options": [
+      "Garrett",
+      "Marcus",
+      "Jeff",
+      "Glenn"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What personal milestone does Amy go through over the course of the series regarding her marriage?",
+    "options": [
+      "She gets divorced",
+      "She gets married for the first time",
+      "She stays married the whole series",
+      "She never discusses her marriage"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does Glenn's character emphasize as a manager?",
+    "options": [
+      "Kindness and a family-oriented approach, sometimes to a fault",
+      "Ruthless efficiency",
+      "Ignoring his employees",
+      "Strict corporate obedience with no empathy"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a common source of humor in the show related to customers?",
+    "options": [
+      "Bizarre or demanding customer interactions",
+      "Customers never appearing on screen",
+      "Customers always being polite",
+      "Customers rarely shopping at Cloud 9"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which employee becomes a close friend/confidant of Amy's throughout the series?",
+    "options": [
+      "Jonah",
+      "Marcus",
+      "Jeff",
+      "Glenn"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How is Mateo generally characterized in terms of personality?",
+    "options": [
+      "Ambitious, sharp-tongued, and image-conscious",
+      "Extremely quiet and withdrawn",
+      "Careless about his job",
+      "Uninterested in advancement"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "Which of these is a major season-long storyline for the store as a workplace?",
+    "options": [
+      "Unionization efforts among employees",
+      "Opening a second location",
+      "Becoming an online-only retailer",
+      "Closing permanently in season 2"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What best describes Cheyenne's arc regarding her personal life during the show?",
+    "options": [
+      "Becoming a young mother while working at the store",
+      "Leaving to become a doctor",
+      "Becoming the store manager",
+      "Moving to another country"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What genre elements does Superstore blend for its comedy?",
+    "options": [
+      "Workplace sitcom with mockumentary-style asides",
+      "Musical theater numbers",
+      "Courtroom drama",
+      "Science fiction"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a defining trait of Dina's approach to her job?",
+    "options": [
+      "Extremely dedicated and rule-abiding, sometimes intense",
+      "Completely careless about rules",
+      "Rarely at the store",
+      "Uninterested in her coworkers"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How is the relationship between corporate and the individual store often portrayed?",
+    "options": [
+      "Corporate is often disconnected from the realities of store life",
+      "Corporate always supports the workers fully",
+      "There is no corporate presence at all",
+      "Corporate visits are never mentioned"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does Jonah's character arc show about his views on retail work over time?",
+    "options": [
+      "He grows to respect and invest in his coworkers and the job",
+      "He becomes even more dismissive of retail work",
+      "He quits within the first episode",
+      "He never changes his opinion at all"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What kind of comedic tone does Superstore typically use for workplace issues?",
+    "options": [
+      "A mix of humor and genuine social commentary",
+      "Purely slapstick with no commentary",
+      "A serious, dramatic-only tone",
+      "Absurdist fantasy humor"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How does Amy's career generally progress over the course of the series?",
+    "options": [
+      "She moves from floor supervisor toward higher management roles",
+      "She stays in the same entry-level role the whole series",
+      "She leaves retail entirely in season 1",
+      "She becomes a customer instead"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What personality trait is Garrett best known for?",
+    "options": [
+      "Dry, sarcastic humor and witty commentary",
+      "Being extremely serious and humorless",
+      "Being the strictest manager",
+      "Avoiding all interactions with coworkers"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does the show suggest about Cloud 9 employees' pay and benefits generally?",
+    "options": [
+      "They are often underpaid with limited benefits",
+      "They receive generous corporate benefits",
+      "They are all salaried executives",
+      "Pay is never discussed on the show"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How does Sandra typically react to being overlooked at work?",
+    "options": [
+      "She often expresses hurt but tries to stay positive",
+      "She quits immediately every time",
+      "She becomes openly violent",
+      "She never notices being overlooked"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does the show depict about the diversity of the Cloud 9 staff?",
+    "options": [
+      "A diverse ensemble cast from many different backgrounds",
+      "An entirely homogeneous cast",
+      "Only corporate executives are shown",
+      "Only part-time teenage staff are shown"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a common source of tension between store employees and management?",
+    "options": [
+      "Balancing personal needs against strict corporate policy",
+      "Employees having too much authority",
+      "Management being completely absent",
+      "No tension exists between the two groups"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How would you describe Glenn's leadership style as store manager?",
+    "options": [
+      "Warm, well-meaning, but sometimes ineffective under pressure",
+      "Cold and calculating",
+      "Purely focused on profit above all else",
+      "Absent and uninvolved"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does the show often use the Cloud 9 setting to comment on?",
+    "options": [
+      "The everyday realities of American retail and low-wage work",
+      "Space exploration",
+      "International diplomacy",
+      "High-fashion runway culture"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a running plot thread involving Mateo's immigration case?",
+    "options": [
+      "It creates real stakes and tension across multiple seasons",
+      "It is resolved instantly in one episode",
+      "It is never mentioned again after being introduced",
+      "It only affects a single minor storyline"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How does the show typically depict the store during major holidays or sale events?",
+    "options": [
+      "Chaotic, high-pressure days full of comedic mishaps",
+      "Calm and uneventful",
+      "Closed entirely for the holidays",
+      "Fully automated with no staff needed"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What role does humor about workplace bureaucracy play in the show?",
+    "options": [
+      "It's a frequent source of comedy about corporate absurdity",
+      "It never comes up in the show",
+      "It's treated as entirely serious with no jokes",
+      "It's only mentioned in the finale"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How is Jeff generally portrayed in his role connecting corporate and the store?",
+    "options": [
+      "Somewhat awkward and eager to fit in despite his corporate role",
+      "Extremely intimidating and feared by all",
+      "Completely absent from the story",
+      "The store's actual day-to-day manager"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a key element of the show's ensemble comedy style?",
+    "options": [
+      "Overlapping personal and professional relationships among coworkers",
+      "A single lead character carrying every episode alone",
+      "No recurring characters at all",
+      "Entirely separate, unconnected storylines each episode"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does the show's final season generally deal with, in terms of major world events?",
+    "options": [
+      "The impact of the COVID-19 pandemic on retail work",
+      "A stock market crash only",
+      "A alien invasion storyline",
+      "The store winning a major franchise award"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How does the show use the format of employee interviews or asides?",
+    "options": [
+      "To let characters share candid, personal perspectives on events",
+      "To replace all dialogue with narration",
+      "To introduce entirely new characters each time",
+      "It does not use this format at all"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What best describes the overall setting scale of Cloud 9 as a store?",
+    "options": [
+      "A large big-box retail store with many departments",
+      "A small boutique with a handful of products",
+      "An online-only warehouse with no customers",
+      "A tiny convenience store"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What does the show suggest about long-term friendships formed at Cloud 9?",
+    "options": [
+      "Coworkers often become like a found family despite the job's stress",
+      "Coworkers never form lasting friendships",
+      "Everyone leaves the store within weeks",
+      "Friendships are only shown between managers"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "How does the show typically balance comedy with serious social issues?",
+    "options": [
+      "It weaves social commentary into a fundamentally comedic show",
+      "It abandons comedy entirely for drama",
+      "It avoids social issues altogether",
+      "It only addresses issues in a single special episode"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  },
+  {
+    "category": "Superstore",
+    "text": "What is a recurring comedic element involving store announcements over the PA system?",
+    "options": [
+      "Sarcastic or absurd announcements, often from Garrett",
+      "Announcements are always strictly professional",
+      "The PA system is never used in the show",
+      "Only customers make PA announcements"
+    ],
+    "answer": 0,
+    "deck": "superstore"
+  }
+]
