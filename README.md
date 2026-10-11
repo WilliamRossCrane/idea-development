@@ -1,42 +1,11 @@
 # Idea Development
 
-A personal space for exploring software ideas, testing concepts and building early-stage prototypes.
+A personal space for exploring software ideas, experimenting with code and building early-stage prototypes.
 
-Not every idea here has a clear direction or needs to become a full project. This repository is where I can experiment, try different approaches and figure out what's worth developing further before committing to a dedicated repository.
+Not every idea here has a clear direction or needs to become a full project. I use this repository to try things out, learn, make changes and figure out which ideas are worth developing further.
 
-Projects are intentionally independent, with their own folders, code and setup. Some are just ideas, others are working prototypes, and some may eventually grow into standalone projects.
+Each folder is its own independent project or experiment. Projects may use different technologies, be at different stages of development, and eventually move into their own repositories.
 
-## Projects
+This isn't one combined application or a polished project portfolio—it's a place to build, experiment and see where ideas go.
 
-| Project | Folder | Focus |
-| --- | --- | --- |
-| PokéOS | [pokeos](pokeos/) | Pokémon-inspired app concepts and planning |
-| Chef Quest | [chef-quest](chef-quest/) | Recipes, meal planning and cooking tools |
-| Party Games | [party-games](party-games/) | Multiplayer party-game experiments, phone controllers and TV screens |
-| Trivia Night | [trivia-night](trivia-night/) | Standalone live trivia prototype with hosting, questions and Chromecast-friendly screens |
-| CardBinder | [cardbinder](cardbinder/) | Digital trading-card collections and binder layouts |
-| AI Learning Platform | [ai-learning-platform](ai-learning-platform/) | Exploring AI-assisted learning tools |
-| Digital Technologies Library | [digital-technologies-library](digital-technologies-library/) | Experiments with digital teaching resources |
-
-## How I use this repository
-
-I use this space to:
-
-- Capture ideas before they turn into fully scoped projects.
-- Explore technologies, interfaces and possible features.
-- Build quick proofs of concept and working prototypes.
-- Refine or rethink an idea without worrying about a polished release.
-- Move promising concepts into their own repositories when they're ready.
-
-There is no single application or shared install process. Each folder is its own experiment; refer to its README for setup and usage.
-
-## Development notes
-
-- [Local development](docs/development.md)
-- [Deploying individual apps](docs/deployment.md)
-- [Migration history and sources](docs/migration.md)
-- [Migration verification](docs/verification.md)
-
----
-
-*An evolving collection of ideas, experiments and projects in progress—not a finished product portfolio.*
+For coding assistants working in this repository, see [AGENTS.md](AGENTS.md) for project boundaries and working guidelines.
