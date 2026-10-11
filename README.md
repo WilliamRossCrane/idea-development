@@ -1,22 +1,41 @@
 # Idea Development
 
-Personal coding projects, prototypes and ideas in development.
+A personal space for exploring software ideas, testing concepts and building early-stage prototypes.
 
-Each project has its own folder, dependencies, configuration and documentation.
-Open the project folder you want to work on and follow its README.
+Not every idea here has a clear direction or needs to become a full project. This repository is where I can experiment, try different approaches and figure out what's worth developing further before committing to a dedicated repository.
 
-| Project | Folder | Current state |
+Projects are intentionally independent, with their own folders, code and setup. Some are just ideas, others are working prototypes, and some may eventually grow into standalone projects.
+
+## Projects
+
+| Project | Folder | Focus |
 | --- | --- | --- |
-| PokéOS | [pokeos](pokeos/) | Planning, architecture and design references |
-| Chef Quest | [chef-quest](chef-quest/) | Static meal-planning prototype |
-| Party Games | [party-games](party-games/) | Next.js party games with phone and TV views |
-| CardBinder | [cardbinder](cardbinder/) | Next.js trading-card binder app |
-| AI Learning Platform | [ai-learning-platform](ai-learning-platform/) | Initial project README |
-| Digital Technologies Library | [digital-technologies-library](digital-technologies-library/) | Initial project README |
+| PokéOS | [pokeos](pokeos/) | Pokémon-inspired app concepts and planning |
+| Chef Quest | [chef-quest](chef-quest/) | Recipes, meal planning and cooking tools |
+| Party Games / Trivia Night | [party-games](party-games/) | Experimental multiplayer party games, trivia, phone controllers and TV screens |
+| CardBinder | [cardbinder](cardbinder/) | Digital trading-card collections and binder layouts |
+| AI Learning Platform | [ai-learning-platform](ai-learning-platform/) | Exploring AI-assisted learning tools |
+| Digital Technologies Library | [digital-technologies-library](digital-technologies-library/) | Experiments with digital teaching resources |
 
-There is no shared install command. Run each app from its own folder.
+## How I use this repository
+
+I use this space to:
+
+- Capture ideas before they turn into fully scoped projects.
+- Explore technologies, interfaces and possible features.
+- Build quick proofs of concept and working prototypes.
+- Refine or rethink an idea without worrying about a polished release.
+- Move promising concepts into their own repositories when they're ready.
+
+There is no single application or shared install process. Each folder is its own experiment; refer to its README for setup and usage.
+
+## Development notes
 
 - [Local development](docs/development.md)
 - [Deploying individual apps](docs/deployment.md)
 - [Migration history and sources](docs/migration.md)
 - [Migration verification](docs/verification.md)
+
+---
+
+*An evolving collection of ideas, experiments and projects in progress—not a finished product portfolio.*
